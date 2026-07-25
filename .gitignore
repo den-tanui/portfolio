@@ -41,3 +41,8 @@ yarn-error.log*
 next-env.d.ts
 skeleton
 node_modules
+
+# Unwanted root-level files (flattened from portfolio/)
+/SPECS.md
+/.agents/
+/.lavish/
