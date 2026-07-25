@@ -1,0 +1,41 @@
+'use client'
+
+import { useEffect } from 'react'
+
+export function useLenis() {
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (mq.matches) return
+
+    let mounted = true
+
+    const initLenis = async () => {
+      const Lenis = (await import('lenis')).default
+      if (!mounted) return
+
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t: number) => Math.min(1, 1.001 - 2 ** (-10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.5,
+      })
+
+      const raf = (time: number) => {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+      requestAnimationFrame(raf)
+
+      return () => lenis.destroy()
+    }
+
+    const cleanup = initLenis()
+
+    return () => {
+      mounted = false
+      cleanup.then((fn) => fn?.())
+    }
+  }, [])
+}

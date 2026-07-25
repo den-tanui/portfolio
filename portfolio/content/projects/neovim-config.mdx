@@ -1,0 +1,34 @@
+---
+title: "neovim-config"
+slug: neovim-config
+tags: [neovim, editor, lua]
+languages: [lua]
+description: "Minimal yet powerful Neovim configuration in Lua with LSP, Treesitter, and a custom plugin manager."
+image: "/images/projects/neovim-config.jpg"
+stars: 256
+featured: true
+---
+
+## Overview
+
+A from-scratch Neovim configuration written in Lua, designed for speed and clarity. No bloat, no frameworks — just well-organized config files.
+
+## Features
+
+- **LSP**: Full IDE features via `neovim/nvim-lspconfig`
+- **Treesitter**: Superior syntax highlighting and code navigation
+- **Custom lazy-loading**: Plugins load only when needed
+- **Mason**: Auto-install LSP servers, linters, and formatters
+
+## Structure
+
+```
+~/.config/nvim/
+├── init.lua          # Entry point
+├── lazy.lua          # Lazy-loading setup
+├── plugins/
+│   ├── lsp.lua       # LSP configuration
+│   ├── treesitter.lua
+│   └── ui.lua        # Statusline, colorscheme
+└── after/ftplugin/   # Per-filetype settings
+```
