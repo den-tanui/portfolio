@@ -1,0 +1,15 @@
+{
+  "name": "Tanu",
+  "contact": {
+    "email": "tanu@example.com",
+    "github": "github.com/tanu"
+  },
+  "experience": [
+    {
+      "role": "Software Engineer",
+      "period": "2020–present",
+      "description": "Building terminal-themed tools and web apps."
+    }
+  ],
+  "skills": ["TypeScript", "React", "Next.js", "Neovim", "Tmux", "fzf", "Rust"]
+}
