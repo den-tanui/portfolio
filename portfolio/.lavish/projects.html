@@ -1,0 +1,1573 @@
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Dennis-Tanui-V0.0.8 | PROJECTS</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        min-height: 100%;
+      }
+      body {
+        background-color: #1a1b26;
+        background-image: radial-gradient(circle, rgba(68, 76, 247, 0.3) 1.2px, transparent 1.2px);
+        background-size: 15px 15px;
+        background-attachment: fixed;
+        color: #c0caf5;
+        font-family: 'JetBrains Mono', monospace;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 20;
+        overflow: visible;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #1a1b26;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #3b4261;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #7aa2f7;
+      }
+      .fzf-highlight {
+        background-color: #ff9e64;
+        color: #1a1b26;
+        padding: 0 2px;
+        font-weight: 700;
+      }
+      @keyframes fadeSlideUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .card-enter {
+        animation: fadeSlideUp 0.4s ease-out both;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'surface-dim': '#12131d',
+              'surface-container-low': '#1a1b26',
+              'surface-container': '#1e1f2a',
+              'surface-container-high': '#282935',
+              'surface-container-highest': '#333440',
+              'surface-bright': '#383844',
+              'surface-variant': '#3b4261',
+              'on-surface': '#c0caf5',
+              'on-surface-variant': '#a9b1d6',
+              'on-surface-muted': '#565f89',
+              primary: '#7aa2f7',
+              'on-primary': '#1a1b26',
+              secondary: '#bb9af7',
+              'on-secondary': '#1a1b26',
+              tertiary: '#ff9e64',
+              'on-tertiary': '#1a1b26',
+              error: '#f7768e',
+              success: '#9ece6a',
+              cyan: '#7dcfff',
+              yellow: '#e0af68',
+              teal: '#73daca',
+              outline: '#3b4261',
+              'outline-variant': '#292e42',
+              background: '#1a1b26',
+              'on-background': '#c0caf5',
+            },
+            fontFamily: { mono: ['JetBrains Mono', 'monospace'] },
+            fontSize: {
+              label: ['11px', { lineHeight: '16px', fontWeight: '700' }],
+              body: ['13px', { lineHeight: '20px' }],
+              'body-lg': ['15px', { lineHeight: '22px' }],
+              h2: ['20px', { lineHeight: '28px', fontWeight: '600' }],
+              h1: ['24px', { lineHeight: '32px', fontWeight: '700' }],
+              display: ['28px', { lineHeight: '36px', fontWeight: '700' }],
+              code: ['13px', { lineHeight: '20px' }],
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body class="font-mono select-none">
+    <!-- ==================== HEADER ==================== -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 h-10 flex items-center bg-surface-dim border-b border-outline-variant"
+    >
+      <div
+        class="h-full flex items-center px-3 bg-surface-container-highest border-r border-outline-variant text-body font-bold text-on-surface-variant shrink-0"
+      >
+        Dennis-Tanui-V0.0.8
+      </div>
+      <nav class="flex items-center h-full">
+        <a
+          href="home.html"
+          class="h-full px-3 flex items-center text-body text-on-surface-muted hover:text-on-surface hover:bg-surface-container transition-colors border-r border-outline-variant"
+          >0:HOME</a
+        >
+        <a
+          href="blog.html"
+          class="h-full px-3 flex items-center text-body text-on-surface-muted hover:text-on-surface hover:bg-surface-container transition-colors border-r border-outline-variant"
+          >1:POSTS</a
+        >
+        <div
+          class="h-full px-3 flex items-center text-body bg-primary text-on-primary font-bold border-r border-outline-variant"
+        >
+          2:PROJECTS
+        </div>
+        <a
+          href="about.html"
+          class="h-full px-3 flex items-center text-body text-on-surface-muted hover:text-on-surface hover:bg-surface-container transition-colors border-r border-outline-variant"
+          >3:ABOUT</a
+        >
+      </nav>
+      <div class="flex-1"></div>
+      <div class="relative h-full">
+        <button
+          id="settings-btn"
+          class="h-full px-4 flex items-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors border-l border-outline-variant shrink-0"
+        >
+          <span class="material-symbols-outlined text-[20px] leading-none overflow-visible"
+            >settings</span
+          >
+        </button>
+        <div
+          id="settings-dropdown"
+          class="hidden absolute right-0 top-full w-56 bg-surface-container border border-outline-variant shadow-2xl z-50 text-body"
+        >
+          <div class="border-b border-outline-variant">
+            <button
+              onclick="toggleTheme()"
+              class="w-full px-4 py-2 flex items-center justify-between text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+            >
+              <span>Theme</span
+              ><span id="theme-label" class="text-label text-on-surface-muted">Dark</span>
+            </button>
+          </div>
+          <div class="border-b border-outline-variant">
+            <div class="px-4 py-1.5 text-label text-on-surface-muted uppercase tracking-wider">
+              Theme Variant
+            </div>
+            <button
+              class="w-full px-4 py-1.5 text-left text-primary bg-primary/10 flex items-center gap-2"
+            >
+              <span class="w-2 h-2 bg-primary"></span> Tokyo Night
+            </button>
+            <button
+              class="w-full px-4 py-1.5 text-left text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-2"
+            >
+              <span class="w-2 h-2 bg-cyan"></span> Tokyo Storm
+            </button>
+            <button
+              class="w-full px-4 py-1.5 text-left text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-2"
+            >
+              <span class="w-2 h-2 bg-secondary"></span> Tokyo Moon
+            </button>
+            <button
+              class="w-full px-4 py-1.5 text-left text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-2"
+            >
+              <span class="w-2 h-2 bg-yellow"></span> Tokyo Day
+            </button>
+          </div>
+          <div class="border-b border-outline-variant">
+            <div class="px-4 py-1.5 text-label text-on-surface-muted uppercase tracking-wider">
+              Font Size
+            </div>
+            <div class="flex">
+              <button
+                onclick="changeFontSize(-1)"
+                class="flex-1 px-4 py-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors text-center"
+              >
+                A-
+              </button>
+              <button
+                onclick="resetFontSize()"
+                class="flex-1 px-4 py-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors text-center border-x border-outline-variant"
+              >
+                Reset
+              </button>
+              <button
+                onclick="changeFontSize(1)"
+                class="flex-1 px-4 py-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors text-center"
+              >
+                A+
+              </button>
+            </div>
+          </div>
+          <div class="border-b border-outline-variant">
+            <div class="px-4 py-1.5 text-label text-on-surface-muted uppercase tracking-wider">
+              Zoom
+            </div>
+            <div class="flex">
+              <button
+                onclick="setZoom(75)"
+                class="flex-1 px-2 py-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors text-center text-label"
+              >
+                75%
+              </button>
+              <button
+                onclick="setZoom(100)"
+                class="flex-1 px-2 py-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors text-center text-label border-x border-outline-variant"
+              >
+                100%
+              </button>
+              <button
+                onclick="setZoom(125)"
+                class="flex-1 px-2 py-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors text-center text-label"
+              >
+                125%
+              </button>
+              <button
+                onclick="setZoom(150)"
+                class="flex-1 px-2 py-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors text-center text-label"
+              >
+                150%
+              </button>
+            </div>
+          </div>
+          <div class="border-b border-outline-variant">
+            <div class="px-4 py-1.5 text-label text-on-surface-muted uppercase tracking-wider">
+              Key Bindings
+            </div>
+            <div class="flex">
+              <button class="flex-1 px-4 py-1.5 text-primary bg-primary/10 text-center">Vim</button>
+              <button
+                class="flex-1 px-4 py-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors text-center border-l border-outline-variant"
+              >
+                Emacs
+              </button>
+            </div>
+          </div>
+          <div class="border-b border-outline-variant">
+            <button
+              onclick="
+                openContactModal()
+                closeSettings()
+              "
+              class="w-full px-4 py-2 text-left text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-[16px]">mail</span> Contact Me
+            </button>
+          </div>
+          <div class="border-b border-outline-variant">
+            <a
+              href="#"
+              class="w-full px-4 py-2 text-left text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-[16px]">download</span> Download CV
+            </a>
+          </div>
+          <div class="border-b border-outline-variant">
+            <button
+              onclick="
+                toggleHelp()
+                closeSettings()
+              "
+              class="w-full px-4 py-2 text-left text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-[16px]">help_outline</span> Help<span
+                class="ml-auto text-label text-on-surface-muted"
+                >?</span
+              >
+            </button>
+          </div>
+          <div>
+            <button
+              onclick="
+                openReportModal()
+                closeSettings()
+              "
+              class="w-full px-4 py-2 text-left text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-[16px]">flag</span> Report Problem
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="fixed top-10 bottom-8 left-0 right-0 overflow-hidden">
+      <div class="w-full h-full custom-scrollbar overflow-y-auto" id="main-scroll">
+        <div class="max-w-6xl mx-auto px-6 py-6">
+          <!-- Terminal Prompt -->
+          <div class="mb-4">
+            <div class="flex items-center gap-2 text-body-lg">
+              <span class="text-tertiary">λ</span>
+              <span class="text-on-surface-variant">/home/user/workspace</span>
+            </div>
+            <div class="flex items-center gap-2 text-body-lg mt-1">
+              <span class="text-primary">$</span>
+              <span class="text-on-surface">ls projects/</span>
+              <span class="w-2 h-5 bg-on-surface animate-pulse inline-block"></span>
+            </div>
+          </div>
+
+          <!-- Search Bar (hidden by default, toggle with /) -->
+          <div id="search-bar-container" class="mb-6 hidden">
+            <div
+              class="flex items-center gap-2 border border-outline-variant bg-surface-container-low px-4 py-2.5 hover:border-primary/50 focus-within:border-primary focus-within:shadow-[0_0_20px_-5px_rgba(122,162,247,0.15)] transition-all"
+            >
+              <span class="text-tertiary font-bold text-body-lg shrink-0">$</span>
+              <input
+                id="search-input"
+                type="text"
+                class="flex-1 bg-transparent text-on-surface text-body outline-none placeholder:text-on-surface-muted/50"
+                placeholder='search "term" #tag @language — try "fzf scripts" #cli @bash'
+              />
+              <span class="text-on-surface-muted text-label shrink-0">/</span>
+            </div>
+            <div id="search-results" class="mt-2 text-label text-on-surface-muted h-4"></div>
+          </div>
+
+          <!-- Project Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="project-grid">
+            <!-- Project 1: fzf-scripts (Featured) -->
+            <div
+              class="filterable-card border border-primary bg-surface-container-low hover:shadow-[0_0_20px_-5px_rgba(122,162,247,0.2)] transition-all group flex flex-col card-enter"
+              data-title="fzf-scripts"
+              data-description="Collection of interactive fuzzy finder scripts for quick navigation, git workflow automation, and process management."
+              data-tags="fzf,cli,automation"
+              data-langs="shell,python"
+              style="animation-delay: 0ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">fzf-scripts</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-primary group-hover:text-tertiary transition-colors"
+                  >
+                    fzf-scripts
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    >
+                    <span class="text-label">1.2k</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  Collection of interactive fuzzy finder scripts for quick navigation, git workflow
+                  automation, and process management.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-tertiary text-label cursor-pointer hover:bg-tertiary hover:text-on-tertiary transition-colors"
+                    data-filter="shell"
+                    >Shell</span
+                  >
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-primary text-label cursor-pointer hover:bg-primary hover:text-on-primary transition-colors"
+                    data-filter="python"
+                    >Python</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="fzf"
+                    >#fzf</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="cli"
+                    >#cli</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="automation"
+                    >#automation</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2: tmux-config -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="tmux-config"
+              data-description="Aggressive keybindings and custom status bar with battery, CPU, and net speed plugins."
+              data-tags="tmux,dotfiles"
+              data-langs="conf"
+              style="animation-delay: 60ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">tmux-config</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    tmux-config
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">432</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  Aggressive keybindings and custom status bar with battery, CPU, and net speed
+                  plugins.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-secondary text-label cursor-pointer hover:bg-secondary hover:text-on-secondary transition-colors"
+                    data-filter="conf"
+                    >Conf</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="tmux"
+                    >#tmux</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="dotfiles"
+                    >#dotfiles</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: nvim-dots -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="nvim-dots"
+              data-description="LSP-first Lua configuration for Neovim. Optimized for minimal distraction and maximum performance."
+              data-tags="neovim,lsp,editor"
+              data-langs="lua,vimscript"
+              style="animation-delay: 120ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">nvim-dots</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    nvim-dots
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">2.8k</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  LSP-first Lua configuration for Neovim. Optimized for minimal distraction and
+                  maximum performance.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-primary text-label cursor-pointer hover:bg-primary hover:text-on-primary transition-colors"
+                    data-filter="lua"
+                    >Lua</span
+                  >
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-tertiary text-label cursor-pointer hover:bg-tertiary hover:text-on-tertiary transition-colors"
+                    data-filter="vimscript"
+                    >Vimscript</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="neovim"
+                    >#neovim</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="lsp"
+                    >#lsp</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="editor"
+                    >#editor</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4: rust-ls-clone -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="rust-ls-clone"
+              data-description="Implementation of ls in Rust using parallel directory walking and terminal colors."
+              data-tags="systems,cli"
+              data-langs="rust"
+              style="animation-delay: 180ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">rust-ls-clone</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    rust-ls-clone
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">892</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  Implementation of ls in Rust using parallel directory walking and terminal colors.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-error text-label cursor-pointer hover:bg-error hover:text-on-surface transition-colors"
+                    data-filter="rust"
+                    >Rust</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="systems"
+                    >#systems</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="cli"
+                    >#cli</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 5: zsh-pure-custom -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="zsh-pure-custom"
+              data-description="Customized ZSH prompt based on Pure, optimized for Tokyo Night theme with async git status."
+              data-tags="prompt,shell"
+              data-langs="zsh"
+              style="animation-delay: 240ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">zsh-pure-custom</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    zsh-pure-custom
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">12</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  Customized ZSH prompt based on Pure, optimized for Tokyo Night theme with async
+                  git status.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-label cursor-pointer hover:bg-on-surface-variant hover:text-on-surface transition-colors"
+                    data-filter="zsh"
+                    >Zsh</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="prompt"
+                    >#prompt</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="shell"
+                    >#shell</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 6: go-json-parser -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="go-json-parser"
+              data-description="High-performance JSON parser written from scratch in Go. Zero allocations where possible."
+              data-tags="performance,parser"
+              data-langs="go"
+              style="animation-delay: 300ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">go-json-parser</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    go-json-parser
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">156</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  High-performance JSON parser written from scratch in Go. Zero allocations where
+                  possible.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-primary text-label cursor-pointer hover:bg-primary hover:text-on-primary transition-colors"
+                    data-filter="go"
+                    >Go</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="performance"
+                    >#performance</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="parser"
+                    >#parser</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 7: docker-stacks -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="docker-stacks"
+              data-description="Curated collection of docker-compose stacks for local development environments."
+              data-tags="devops,containers"
+              data-langs="yaml,shell"
+              style="animation-delay: 360ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">docker-stacks</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    docker-stacks
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">245</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  Curated collection of docker-compose stacks for local development environments.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-secondary text-label cursor-pointer hover:bg-secondary hover:text-on-secondary transition-colors"
+                    data-filter="yaml"
+                    >YAML</span
+                  >
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-tertiary text-label cursor-pointer hover:bg-tertiary hover:text-on-tertiary transition-colors"
+                    data-filter="shell"
+                    >Shell</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="devops"
+                    >#devops</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="containers"
+                    >#containers</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 8: py-async-worker -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="py-async-worker"
+              data-description="Lightweight asynchronous task queue for Python utilizing Redis and asyncio."
+              data-tags="asyncio,redis"
+              data-langs="python"
+              style="animation-delay: 420ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">py-async-worker</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    py-async-worker
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">67</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  Lightweight asynchronous task queue for Python utilizing Redis and asyncio.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-primary text-label cursor-pointer hover:bg-primary hover:text-on-primary transition-colors"
+                    data-filter="python"
+                    >Python</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="asyncio"
+                    >#asyncio</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="redis"
+                    >#redis</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 9: web-shell-ui -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="web-shell-ui"
+              data-description="A React component library designed for building terminal-like web interfaces."
+              data-tags="frontend,ui"
+              data-langs="typescript,react"
+              style="animation-delay: 480ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">web-shell-ui</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    web-shell-ui
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">1.1k</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  A React component library designed for building terminal-like web interfaces.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-primary text-label cursor-pointer hover:bg-primary hover:text-on-primary transition-colors"
+                    data-filter="typescript"
+                    >TypeScript</span
+                  >
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-tertiary text-label cursor-pointer hover:bg-tertiary hover:text-on-tertiary transition-colors"
+                    data-filter="react"
+                    >React</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="frontend"
+                    >#frontend</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="ui"
+                    >#ui</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 10: nix-system -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="nix-system"
+              data-description="Reproducible NixOS system configuration with Flakes and Home Manager."
+              data-tags="linux,dotfiles"
+              data-langs="nix"
+              style="animation-delay: 540ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">nix-system</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    nix-system
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">88</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  Reproducible NixOS system configuration with Flakes and Home Manager.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-secondary text-label cursor-pointer hover:bg-secondary hover:text-on-secondary transition-colors"
+                    data-filter="nix"
+                    >Nix</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="linux"
+                    >#linux</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="dotfiles"
+                    >#dotfiles</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 11: elixir-chat -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="elixir-chat"
+              data-description="Distributed real-time chat application powered by Phoenix Channels."
+              data-tags="distributed,phoenix"
+              data-langs="elixir,erlang"
+              style="animation-delay: 600ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">elixir-chat</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    elixir-chat
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">192</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  Distributed real-time chat application powered by Phoenix Channels.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-error text-label cursor-pointer hover:bg-error hover:text-on-surface transition-colors"
+                    data-filter="elixir"
+                    >Elixir</span
+                  >
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-primary text-label cursor-pointer hover:bg-primary hover:text-on-primary transition-colors"
+                    data-filter="erlang"
+                    >Erlang</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="distributed"
+                    >#distributed</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="phoenix"
+                    >#phoenix</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 12: cpp-raytracer -->
+            <div
+              class="filterable-card border border-outline-variant bg-surface-container-low hover:border-primary hover:shadow-[0_0_15px_-5px_rgba(122,162,247,0.15)] transition-all group flex flex-col card-enter"
+              data-title="cpp-raytracer"
+              data-description="Minimalistic path tracer implemented in C++20 with multithreaded rendering."
+              data-tags="graphics,math"
+              data-langs="cpp"
+              style="animation-delay: 660ms"
+            >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 border-b border-outline-variant bg-surface-dim"
+              >
+                <div class="w-2.5 h-2.5 bg-error"></div>
+                <div class="w-2.5 h-2.5 bg-yellow"></div>
+                <div class="w-2.5 h-2.5 bg-success"></div>
+                <span class="ml-2 text-label text-on-surface-muted">cpp-raytracer</span>
+              </div>
+              <div class="p-4 flex-1 flex flex-col">
+                <div class="flex justify-between items-start mb-2">
+                  <h3
+                    class="card-title text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors"
+                  >
+                    cpp-raytracer
+                  </h3>
+                  <div class="flex items-center gap-1 text-on-surface-variant">
+                    <span
+                      class="material-symbols-outlined text-[14px]"
+                      style="font-variation-settings: 'FILL' 1"
+                      >star</span
+                    ><span class="text-label">312</span>
+                  </div>
+                </div>
+                <p class="text-body text-on-surface-variant mb-3 flex-1">
+                  Minimalistic path tracer implemented in C++20 with multithreaded rendering.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mt-auto">
+                  <span
+                    class="lang-click px-2 py-0.5 bg-surface-container-highest text-primary text-label cursor-pointer hover:bg-primary hover:text-on-primary transition-colors"
+                    data-filter="cpp"
+                    >C++</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-x-3 text-on-surface-muted mt-2 text-label">
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="graphics"
+                    >#graphics</span
+                  >
+                  <span
+                    class="tag-click cursor-pointer hover:text-primary transition-colors"
+                    data-filter="math"
+                    >#math</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer
+      class="fixed bottom-0 left-0 right-0 z-50 h-8 flex items-center bg-surface-container-low border-t border-outline-variant text-label uppercase tracking-widest"
+    >
+      <div class="flex items-center h-full">
+        <div class="bg-primary text-on-primary px-3 h-full flex items-center font-bold">
+          PROJECTS
+        </div>
+        <div
+          class="px-3 h-full flex items-center text-on-surface-variant border-r border-outline-variant"
+        >
+          INDEX
+        </div>
+      </div>
+      <div class="flex-1 flex items-center justify-center gap-4">
+        <a class="text-on-surface-muted hover:text-primary transition-colors" href="#">GITHUB</a>
+        <a class="text-on-surface-muted hover:text-primary transition-colors" href="#">LINKEDIN</a>
+        <a class="text-on-surface-muted hover:text-primary transition-colors" href="#">RSS</a>
+      </div>
+      <div class="flex items-center h-full">
+        <button
+          onclick="toggleHelp()"
+          class="px-3 h-full flex items-center text-on-surface-muted hover:text-tertiary transition-colors border-l border-outline-variant"
+        >
+          [?] HELP
+        </button>
+        <div
+          class="px-3 h-full flex items-center text-on-surface-muted bg-surface-container-highest border-l border-outline-variant"
+          id="zoom-level"
+        >
+          100%
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==================== HELP MODAL ==================== -->
+    <div
+      id="help-modal"
+      class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-surface-dim/80 backdrop-blur-sm"
+    >
+      <div
+        class="w-full max-w-xl bg-surface-container border border-primary shadow-[0_0_40px_-10px_rgba(122,162,247,0.3)] relative text-body"
+      >
+        <div
+          class="bg-primary text-on-primary px-4 py-2 flex justify-between items-center font-bold"
+        >
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">help_outline</span
+            ><span>MANUAL: KEYBOARD_SHORTCUTS</span>
+          </div>
+          <button onclick="toggleHelp()" class="hover:bg-on-primary/20 p-1">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+        </div>
+        <div class="p-6">
+          <div class="mb-5">
+            <div class="text-tertiary font-bold text-label uppercase tracking-wider mb-1">NAME</div>
+            <div class="pl-3 text-on-surface">
+              help - show interactive navigational commands for this interface
+            </div>
+          </div>
+          <div class="mb-5">
+            <div class="text-tertiary font-bold text-label uppercase tracking-wider mb-1">
+              SYNOPSIS
+            </div>
+            <div class="pl-3 text-on-surface">
+              [<span class="text-primary">KEY</span>]
+              <span class="text-on-surface-variant">ACTION</span>
+            </div>
+          </div>
+          <div class="mb-5">
+            <div class="text-tertiary font-bold text-label uppercase tracking-wider mb-2">
+              NAVIGATION
+            </div>
+            <div class="space-y-1.5 pl-3">
+              <div
+                class="flex justify-between items-center border-b border-outline-variant/50 pb-1.5"
+              >
+                <span class="text-primary font-bold px-1.5 py-0.5 bg-primary/10 text-label">0</span
+                ><span class="text-on-surface-variant">Navigate to HOME / WHOAMI</span>
+              </div>
+              <div
+                class="flex justify-between items-center border-b border-outline-variant/50 pb-1.5"
+              >
+                <span class="text-primary font-bold px-1.5 py-0.5 bg-primary/10 text-label">1</span
+                ><span class="text-on-surface-variant">Navigate to POSTS / BLOG</span>
+              </div>
+              <div
+                class="flex justify-between items-center border-b border-outline-variant/50 pb-1.5"
+              >
+                <span class="text-primary font-bold px-1.5 py-0.5 bg-primary/10 text-label">2</span
+                ><span class="text-on-surface-variant">Navigate to PROJECTS</span>
+              </div>
+              <div
+                class="flex justify-between items-center border-b border-outline-variant/50 pb-1.5"
+              >
+                <span class="text-primary font-bold px-1.5 py-0.5 bg-primary/10 text-label">3</span
+                ><span class="text-on-surface-variant">Navigate to ABOUT</span>
+              </div>
+            </div>
+          </div>
+          <div class="mb-5">
+            <div class="text-tertiary font-bold text-label uppercase tracking-wider mb-2">
+              SYSTEM
+            </div>
+            <div class="space-y-1.5 pl-3">
+              <div
+                class="flex justify-between items-center border-b border-outline-variant/50 pb-1.5"
+              >
+                <span class="text-secondary font-bold px-1.5 py-0.5 bg-secondary/10 text-label"
+                  >?</span
+                ><span class="text-on-surface-variant">Toggle this help manual</span>
+              </div>
+              <div
+                class="flex justify-between items-center border-b border-outline-variant/50 pb-1.5"
+              >
+                <span class="text-secondary font-bold px-1.5 py-0.5 bg-secondary/10 text-label"
+                  >/</span
+                ><span class="text-on-surface-variant">Focus search</span>
+              </div>
+              <div
+                class="flex justify-between items-center border-b border-outline-variant/50 pb-1.5"
+              >
+                <span class="text-secondary font-bold px-1.5 py-0.5 bg-secondary/10 text-label"
+                  >Esc</span
+                ><span class="text-on-surface-variant">Close modal / Go back</span>
+              </div>
+              <div
+                class="flex justify-between items-center border-b border-outline-variant/50 pb-1.5"
+              >
+                <span class="text-secondary font-bold px-1.5 py-0.5 bg-secondary/10 text-label"
+                  >g / G</span
+                ><span class="text-on-surface-variant">Scroll to top / bottom</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 text-center">
+            <button
+              onclick="toggleHelp()"
+              class="px-6 py-2 bg-surface-container-highest border border-outline text-on-surface-variant hover:text-primary hover:border-primary transition-all"
+            >
+              PRESS [ESC] OR CLICK TO DISMISS
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CONTACT MODAL ==================== -->
+    <div
+      id="contact-modal"
+      class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-surface-dim/80 backdrop-blur-sm"
+    >
+      <div
+        class="w-full max-w-md bg-surface-container border border-primary shadow-[0_0_40px_-10px_rgba(122,162,247,0.3)] relative text-body"
+      >
+        <div
+          class="bg-primary text-on-primary px-4 py-2 flex justify-between items-center font-bold"
+        >
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">mail</span>
+            <span>SEND A MESSAGE</span>
+          </div>
+          <button onclick="closeContactModal()" class="hover:bg-on-primary/20 p-1">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <label class="block text-label text-primary uppercase tracking-wider mb-1.5"
+              >Name</label
+            >
+            <input
+              type="text"
+              class="w-full bg-surface-dim border border-outline-variant text-on-surface px-3 py-2 text-body focus:border-primary focus:outline-none transition-colors"
+              placeholder="Your name"
+            />
+          </div>
+          <div>
+            <label class="block text-label text-primary uppercase tracking-wider mb-1.5"
+              >Email</label
+            >
+            <input
+              type="email"
+              class="w-full bg-surface-dim border border-outline-variant text-on-surface px-3 py-2 text-body focus:border-primary focus:outline-none transition-colors"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label class="block text-label text-primary uppercase tracking-wider mb-1.5"
+              >Subject</label
+            >
+            <input
+              type="text"
+              class="w-full bg-surface-dim border border-outline-variant text-on-surface px-3 py-2 text-body focus:border-primary focus:outline-none transition-colors"
+              placeholder="What's this about?"
+            />
+          </div>
+          <div>
+            <label class="block text-label text-primary uppercase tracking-wider mb-1.5"
+              >Message</label
+            >
+            <textarea
+              rows="4"
+              class="w-full bg-surface-dim border border-outline-variant text-on-surface px-3 py-2 text-body focus:border-primary focus:outline-none transition-colors resize-none"
+              placeholder="Type your message here..."
+            ></textarea>
+          </div>
+          <button
+            class="w-full py-2 bg-primary text-on-primary font-bold hover:bg-cyan transition-colors"
+          >
+            SEND_MESSAGE
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== REPORT MODAL ==================== -->
+    <div
+      id="report-modal"
+      class="hidden fixed inset-0 z-[100] items-center justify-center p-4 bg-surface-dim/80 backdrop-blur-sm"
+    >
+      <div
+        class="w-full max-w-md bg-surface-container border border-tertiary shadow-[0_0_40px_-10px_rgba(255,158,100,0.3)] relative text-body"
+      >
+        <div
+          class="bg-tertiary text-on-tertiary px-4 py-2 flex justify-between items-center font-bold"
+        >
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">flag</span
+            ><span>REPORT A PROBLEM</span>
+          </div>
+          <button onclick="closeReportModal()" class="hover:bg-on-tertiary/20 p-1">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+        </div>
+        <div class="p-6 space-y-4">
+          <div>
+            <label class="block text-label text-tertiary uppercase tracking-wider mb-1.5"
+              >Name</label
+            ><input
+              type="text"
+              class="w-full bg-surface-dim border border-outline-variant text-on-surface px-3 py-2 text-body focus:border-tertiary focus:outline-none transition-colors"
+              placeholder="Your name"
+            />
+          </div>
+          <div>
+            <label class="block text-label text-tertiary uppercase tracking-wider mb-1.5"
+              >Email</label
+            ><input
+              type="email"
+              class="w-full bg-surface-dim border border-outline-variant text-on-surface px-3 py-2 text-body focus:border-tertiary focus:outline-none transition-colors"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label class="block text-label text-tertiary uppercase tracking-wider mb-1.5"
+              >Message</label
+            ><textarea
+              rows="4"
+              class="w-full bg-surface-dim border border-outline-variant text-on-surface px-3 py-2 text-body focus:border-tertiary focus:outline-none transition-colors resize-none"
+              placeholder="Describe the problem..."
+            ></textarea>
+          </div>
+          <button
+            class="w-full py-2 bg-tertiary text-on-tertiary font-bold hover:bg-yellow transition-colors"
+          >
+            SUBMIT REPORT
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+      // ==================== UI Helpers ====================
+      function toggleSettings() {
+        document.getElementById('settings-dropdown').classList.toggle('hidden')
+      }
+      function closeSettings() {
+        document.getElementById('settings-dropdown').classList.add('hidden')
+      }
+      document.getElementById('settings-btn').addEventListener('click', (e) => {
+        e.stopPropagation()
+        toggleSettings()
+      })
+      document.addEventListener('click', (e) => {
+        const dd = document.getElementById('settings-dropdown')
+        if (!dd.contains(e.target)) dd.classList.add('hidden')
+      })
+      function toggleTheme() {
+        const h = document.documentElement
+        h.classList.toggle('dark')
+        h.classList.toggle('light')
+        document.getElementById('theme-label').textContent = h.classList.contains('dark')
+          ? 'Dark'
+          : 'Light'
+      }
+      let fontSizeOffset = 0
+      function changeFontSize(d) {
+        fontSizeOffset = Math.max(-2, Math.min(4, fontSizeOffset + d))
+        document.documentElement.style.fontSize = 100 + fontSizeOffset * 5 + '%'
+      }
+      function resetFontSize() {
+        fontSizeOffset = 0
+        document.documentElement.style.fontSize = '100%'
+      }
+      function setZoom(l) {
+        document.documentElement.style.zoom = l / 100
+        document.getElementById('zoom-level').textContent = l + '%'
+        closeSettings()
+      }
+      function toggleHelp() {
+        const m = document.getElementById('help-modal')
+        m.classList.toggle('hidden')
+        m.classList.toggle('flex')
+      }
+      function closeHelp() {
+        const m = document.getElementById('help-modal')
+        m.classList.add('hidden')
+        m.classList.remove('flex')
+      }
+      function openReportModal() {
+        const m = document.getElementById('report-modal')
+        m.classList.remove('hidden')
+        m.classList.add('flex')
+      }
+      function closeReportModal() {
+        const m = document.getElementById('report-modal')
+        m.classList.add('hidden')
+        m.classList.remove('flex')
+      }
+      function openContactModal() {
+        const m = document.getElementById('contact-modal')
+        m.classList.remove('hidden')
+        m.classList.add('flex')
+      }
+      function closeContactModal() {
+        const m = document.getElementById('contact-modal')
+        m.classList.add('hidden')
+        m.classList.remove('flex')
+      }
+
+      // ==================== Keyboard Shortcuts ====================
+      document.addEventListener('keydown', (e) => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return
+        if (e.key === '?') {
+          e.preventDefault()
+          toggleHelp()
+        }
+        if (e.key === 'Escape') {
+          closeHelp()
+          closeReportModal()
+          closeContactModal()
+          closeSettings()
+        }
+        if (e.key === '0') window.location.href = 'home.html'
+        if (e.key === '1') window.location.href = 'blog.html'
+        if (e.key === '2') window.location.href = 'projects.html'
+        if (e.key === '3') window.location.href = 'about.html'
+        if (e.key === '/') {
+          e.preventDefault()
+          const c = document.getElementById('search-bar-container')
+          c.classList.toggle('hidden')
+          if (!c.classList.contains('hidden')) document.getElementById('search-input').focus()
+        }
+        if (e.key === 'g') {
+          const el = document.getElementById('main-scroll')
+          el.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+        if (e.key === 'G') {
+          const el = document.getElementById('main-scroll')
+          el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' })
+        }
+      })
+      document.getElementById('help-modal').addEventListener('click', function (e) {
+        if (e.target === this) toggleHelp()
+      })
+      document.getElementById('report-modal').addEventListener('click', function (e) {
+        if (e.target === this) closeReportModal()
+      })
+      document.getElementById('contact-modal').addEventListener('click', function (e) {
+        if (e.target === this) closeContactModal()
+      })
+
+      // ==================== Search/Filter System ====================
+      const searchInput = document.getElementById('search-input')
+      const searchResults = document.getElementById('search-results')
+      const allCards = document.querySelectorAll('.filterable-card')
+
+      function parseQuery(query) {
+        const terms = []
+        const tags = []
+        const langs = []
+        const quotedRegex = /"([^"]+)"/g
+        let match
+        while ((match = quotedRegex.exec(query)) !== null) {
+          terms.push(match[1].toLowerCase())
+        }
+        const remaining = query.replace(quotedRegex, '').trim()
+        const parts = remaining.split(/\s+/)
+        for (const part of parts) {
+          if (part.startsWith('#') && part.length > 1) {
+            tags.push(part.slice(1).toLowerCase())
+          } else if (part.startsWith('@') && part.length > 1) {
+            langs.push(part.slice(1).toLowerCase())
+          } else if (part.length > 0) {
+            terms.push(part.toLowerCase())
+          }
+        }
+        return { terms, tags, langs }
+      }
+
+      function highlightText(text, terms) {
+        let result = text
+        for (const term of terms) {
+          const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi')
+          result = result.replace(regex, '<span class="fzf-highlight">$1</span>')
+        }
+        return result
+      }
+
+      function filterCards() {
+        const query = searchInput.value
+        const { terms, tags, langs } = parseQuery(query)
+        let visibleCount = 0
+
+        allCards.forEach((card) => {
+          const title = card.dataset.title?.toLowerCase() || ''
+          const desc = card.dataset.description?.toLowerCase() || ''
+          const cardTags = (card.dataset.tags || '').split(',').map((t) => t.trim().toLowerCase())
+          const cardLangs = (card.dataset.langs || '').split(',').map((l) => l.trim().toLowerCase())
+
+          const textMatch =
+            terms.length === 0 || terms.some((t) => title.includes(t) || desc.includes(t))
+          const tagMatch = tags.length === 0 || tags.some((t) => cardTags.includes(t))
+          const langMatch = langs.length === 0 || langs.some((l) => cardLangs.includes(l))
+          const visible = textMatch && tagMatch && langMatch
+
+          card.style.display = visible ? '' : 'none'
+          if (visible) visibleCount++
+
+          if (terms.length > 0 && visible) {
+            const titleEl = card.querySelector('.card-title')
+            if (titleEl) {
+              const original = titleEl.dataset.originalTitle || titleEl.textContent
+              titleEl.dataset.originalTitle = original
+              titleEl.innerHTML = highlightText(original, terms)
+            }
+          } else {
+            const titleEl = card.querySelector('.card-title')
+            if (titleEl && titleEl.dataset.originalTitle) {
+              titleEl.innerHTML = titleEl.dataset.originalTitle
+            }
+          }
+        })
+
+        searchResults.textContent = query.trim()
+          ? `Showing ${visibleCount} of ${allCards.length} results`
+          : ''
+      }
+
+      let searchTimeout
+      searchInput?.addEventListener('input', () => {
+        clearTimeout(searchTimeout)
+        searchTimeout = setTimeout(filterCards, 150)
+      })
+
+      // Click handlers for tags
+      document.querySelectorAll('.tag-click').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          const value = el.dataset.filter || el.textContent.trim().toLowerCase()
+          searchInput.value = '#' + value
+          searchInput.focus()
+          filterCards()
+        })
+      })
+
+      // Click handlers for language pills
+      document.querySelectorAll('.lang-click').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          const value = el.dataset.filter || el.textContent.trim().toLowerCase()
+          searchInput.value = '@' + value
+          searchInput.focus()
+          filterCards()
+        })
+      })
+    </script>
+  </body>
+</html>
