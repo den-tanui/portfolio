@@ -1,0 +1,436 @@
+{
+  "nodes": [
+    {
+      "id": "file:lib/fonts.ts",
+      "type": "file",
+      "name": "fonts.ts",
+      "filePath": "lib/fonts.ts",
+      "summary": "Font configuration module exporting Inter and JetBrains Mono font classes.",
+      "tags": [
+        "config",
+        "fonts",
+        "typography"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/theme.ts",
+      "type": "file",
+      "name": "theme.ts",
+      "filePath": "lib/theme.ts",
+      "summary": "Theme configuration module providing color palettes for light and dark modes.",
+      "tags": [
+        "config",
+        "theme",
+        "colors"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/api.ts",
+      "type": "file",
+      "name": "api.ts",
+      "filePath": "lib/api.ts",
+      "summary": "API utilities for fetching GitHub profile and repository data via Octokit.",
+      "tags": [
+        "service",
+        "api",
+        "github"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/api.ts:fetchGitHubProfile",
+      "type": "function",
+      "name": "fetchGitHubProfile",
+      "filePath": "lib/api.ts",
+      "summary": "Fetches authenticated GitHub user profile via Octokit REST API.",
+      "tags": [
+        "api",
+        "github"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        8,
+        12
+      ]
+    },
+    {
+      "id": "function:lib/api.ts:fetchGitHubRepos",
+      "type": "function",
+      "name": "fetchGitHubRepos",
+      "filePath": "lib/api.ts",
+      "summary": "Fetches public repositories for a user, sorted by update date.",
+      "tags": [
+        "api",
+        "github"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        14,
+        22
+      ]
+    },
+    {
+      "id": "function:lib/api.ts:fetchGitHubRepoReadme",
+      "type": "function",
+      "name": "fetchGitHubRepoReadme",
+      "filePath": "lib/api.ts",
+      "summary": "Fetches README content from a specific GitHub repository.",
+      "tags": [
+        "api",
+        "github"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        24,
+        33
+      ]
+    },
+    {
+      "id": "file:lib/search-index.ts",
+      "type": "file",
+      "name": "search-index.ts",
+      "filePath": "lib/search-index.ts",
+      "summary": "Search index builder generating and caching a combined index of blog posts and projects for search.",
+      "tags": [
+        "search",
+        "index",
+        "caching"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/search-index.ts:getSearchIndex",
+      "type": "function",
+      "name": "getSearchIndex",
+      "filePath": "lib/search-index.ts",
+      "summary": "Returns cached search index combining blog posts and projects.",
+      "tags": [
+        "search",
+        "index"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        7,
+        33
+      ]
+    },
+    {
+      "id": "file:lib/constants.ts",
+      "type": "file",
+      "name": "constants.ts",
+      "filePath": "lib/constants.ts",
+      "summary": "Site-wide constants including site metadata, navigation links, and social URLs.",
+      "tags": [
+        "config",
+        "constants"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:lib/github.ts",
+      "type": "file",
+      "name": "github.ts",
+      "filePath": "lib/github.ts",
+      "summary": "GitHub API integration using Octokit for fetching user profile and repository data.",
+      "tags": [
+        "service",
+        "github",
+        "api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/github.ts:fetchGitHubProfile",
+      "type": "function",
+      "name": "fetchGitHubProfile",
+      "filePath": "lib/github.ts",
+      "summary": "Fetches GitHub user profile using Octokit.",
+      "tags": [
+        "api",
+        "github"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        6,
+        12
+      ]
+    },
+    {
+      "id": "function:lib/github.ts:fetchGitHubRepos",
+      "type": "function",
+      "name": "fetchGitHubRepos",
+      "filePath": "lib/github.ts",
+      "summary": "Fetches all public repos for a user, sorted by last updated.",
+      "tags": [
+        "api",
+        "github"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        14,
+        28
+      ]
+    },
+    {
+      "id": "function:lib/github.ts:fetchGitHubRepoReadme",
+      "type": "function",
+      "name": "fetchGitHubRepoReadme",
+      "filePath": "lib/github.ts",
+      "summary": "Fetches and decodes README content from a GitHub repository.",
+      "tags": [
+        "api",
+        "github"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        30,
+        42
+      ]
+    },
+    {
+      "id": "file:lib/og.tsx",
+      "type": "file",
+      "name": "og.tsx",
+      "filePath": "lib/og.tsx",
+      "summary": "Open Graph image generation using Satori for social media preview cards.",
+      "tags": [
+        "seo",
+        "og-image",
+        "satori"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/og.tsx:generateOgImage",
+      "type": "function",
+      "name": "generateOgImage",
+      "filePath": "lib/og.tsx",
+      "summary": "Generates an SVG Open Graph image with title and subtitle.",
+      "tags": [
+        "seo",
+        "og-image"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        4,
+        70
+      ]
+    },
+    {
+      "id": "file:lib/projects.ts",
+      "type": "file",
+      "name": "projects.ts",
+      "filePath": "lib/projects.ts",
+      "summary": "Project data management module reading MDX project files from disk.",
+      "tags": [
+        "service",
+        "projects",
+        "mdx"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/projects.ts:getProjects",
+      "type": "function",
+      "name": "getProjects",
+      "filePath": "lib/projects.ts",
+      "summary": "Reads all project MDX files and returns sorted project data.",
+      "tags": [
+        "data-fetching",
+        "projects"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        6,
+        24
+      ]
+    },
+    {
+      "id": "function:lib/projects.ts:getProject",
+      "type": "function",
+      "name": "getProject",
+      "filePath": "lib/projects.ts",
+      "summary": "Fetches a single project by slug including its README from GitHub.",
+      "tags": [
+        "data-fetching",
+        "github"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        26,
+        34
+      ]
+    },
+    {
+      "id": "file:lib/test-utils.ts",
+      "type": "file",
+      "name": "test-utils.ts",
+      "filePath": "lib/test-utils.ts",
+      "summary": "Test utility functions for mocking and assertion in Vitest tests.",
+      "tags": [
+        "test",
+        "utility",
+        "mock"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:fetchGitHubProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:fetchGitHubProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:fetchGitHubRepos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:fetchGitHubRepos",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:fetchGitHubRepoReadme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/api.ts",
+      "target": "function:lib/api.ts:fetchGitHubRepoReadme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/search-index.ts",
+      "target": "file:lib/content.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/search-index.ts",
+      "target": "function:lib/search-index.ts:getSearchIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/search-index.ts",
+      "target": "function:lib/search-index.ts:getSearchIndex",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/github.ts",
+      "target": "function:lib/github.ts:fetchGitHubProfile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/github.ts",
+      "target": "function:lib/github.ts:fetchGitHubProfile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/github.ts",
+      "target": "function:lib/github.ts:fetchGitHubRepos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/github.ts",
+      "target": "function:lib/github.ts:fetchGitHubRepos",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/github.ts",
+      "target": "function:lib/github.ts:fetchGitHubRepoReadme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/github.ts",
+      "target": "function:lib/github.ts:fetchGitHubRepoReadme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/og.tsx",
+      "target": "function:lib/og.tsx:generateOgImage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/og.tsx",
+      "target": "function:lib/og.tsx:generateOgImage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/projects.ts",
+      "target": "file:lib/github.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:lib/projects.ts",
+      "target": "function:lib/projects.ts:getProjects",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/projects.ts",
+      "target": "function:lib/projects.ts:getProjects",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/projects.ts",
+      "target": "function:lib/projects.ts:getProject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/projects.ts",
+      "target": "function:lib/projects.ts:getProject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

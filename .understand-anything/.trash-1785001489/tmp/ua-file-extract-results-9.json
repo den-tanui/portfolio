@@ -1,0 +1,100 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "content/projects/dotfiles-manager.mdx",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 29,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Features",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Bootstrap",
+          "level": 2,
+          "line": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "content/projects/fzf-scripts.mdx",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 31,
+      "nonEmptyLines": 24,
+      "sections": [
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Features",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Usage",
+          "level": 2,
+          "line": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "content/projects/neovim-config.mdx",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 34,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Features",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Structure",
+          "level": 2,
+          "line": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    }
+  ]
+}

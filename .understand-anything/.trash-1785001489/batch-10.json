@@ -1,0 +1,357 @@
+{
+  "nodes": [
+    {
+      "id": "file:components/SearchResults.tsx",
+      "type": "file",
+      "name": "SearchResults.tsx",
+      "filePath": "components/SearchResults.tsx",
+      "summary": "Search results display component rendering filtered content with result counts.",
+      "tags": [
+        "component",
+        "search",
+        "results"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/SearchResults.tsx:SearchResults",
+      "type": "function",
+      "name": "SearchResults",
+      "filePath": "components/SearchResults.tsx",
+      "summary": "Component displaying search results with project and blog post sections.",
+      "tags": [
+        "component",
+        "search"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        15,
+        60
+      ]
+    },
+    {
+      "id": "file:components/Skills.tsx",
+      "type": "file",
+      "name": "Skills.tsx",
+      "filePath": "components/Skills.tsx",
+      "summary": "Skills section component displaying technical skills with icons and categories.",
+      "tags": [
+        "component",
+        "skills",
+        "display"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/Skills.tsx:Skills",
+      "type": "function",
+      "name": "Skills",
+      "filePath": "components/Skills.tsx",
+      "summary": "Renders categorized technical skills with technology icons.",
+      "tags": [
+        "component",
+        "skills"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        10,
+        50
+      ]
+    },
+    {
+      "id": "file:components/SocialLinks.tsx",
+      "type": "file",
+      "name": "SocialLinks.tsx",
+      "filePath": "components/SocialLinks.tsx",
+      "summary": "Social links component rendering navigation to external social profiles.",
+      "tags": [
+        "component",
+        "social",
+        "navigation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:components/SocialLinks.tsx:SocialLinks",
+      "type": "function",
+      "name": "SocialLinks",
+      "filePath": "components/SocialLinks.tsx",
+      "summary": "Renders social media profile links (GitHub, LinkedIn, Twitter).",
+      "tags": [
+        "component",
+        "social"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        5,
+        30
+      ]
+    },
+    {
+      "id": "file:components/Terminal.tsx",
+      "type": "file",
+      "name": "Terminal.tsx",
+      "filePath": "components/Terminal.tsx",
+      "summary": "Interactive terminal emulator component with command history and styled output.",
+      "tags": [
+        "component",
+        "terminal",
+        "interactive"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:components/Terminal.tsx:Terminal",
+      "type": "function",
+      "name": "Terminal",
+      "filePath": "components/Terminal.tsx",
+      "summary": "Full terminal emulator with command input, history, and styled output rendering.",
+      "tags": [
+        "component",
+        "terminal"
+      ],
+      "complexity": "complex",
+      "lineRange": [
+        10,
+        120
+      ]
+    },
+    {
+      "id": "file:components/Testimonials.tsx",
+      "type": "file",
+      "name": "Testimonials.tsx",
+      "filePath": "components/Testimonials.tsx",
+      "summary": "Testimonials section displaying client feedback with carousel navigation.",
+      "tags": [
+        "component",
+        "testimonials",
+        "carousel"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/Testimonials.tsx:Testimonials",
+      "type": "function",
+      "name": "Testimonials",
+      "filePath": "components/Testimonials.tsx",
+      "summary": "Renders testimonials carousel with navigation and responsive layout.",
+      "tags": [
+        "component",
+        "testimonials"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        10,
+        60
+      ]
+    },
+    {
+      "id": "file:components/ThemeToggle.tsx",
+      "type": "file",
+      "name": "ThemeToggle.tsx",
+      "filePath": "components/ThemeToggle.tsx",
+      "summary": "Theme toggle button switching between light, dark, and system theme modes.",
+      "tags": [
+        "component",
+        "theme",
+        "toggle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/ThemeToggle.tsx:ThemeToggle",
+      "type": "function",
+      "name": "ThemeToggle",
+      "filePath": "components/ThemeToggle.tsx",
+      "summary": "Button component cycling through light/dark/system themes.",
+      "tags": [
+        "component",
+        "theme"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        10,
+        40
+      ]
+    },
+    {
+      "id": "file:components/Timeline.tsx",
+      "type": "file",
+      "name": "Timeline.tsx",
+      "filePath": "components/Timeline.tsx",
+      "summary": "Timeline component displaying work experience in chronological order.",
+      "tags": [
+        "component",
+        "timeline",
+        "experience"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/Timeline.tsx:Timeline",
+      "type": "function",
+      "name": "Timeline",
+      "filePath": "components/Timeline.tsx",
+      "summary": "Renders work experience timeline with company, role, and date details.",
+      "tags": [
+        "component",
+        "timeline"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        10,
+        55
+      ]
+    },
+    {
+      "id": "file:components/TypingAnimation.tsx",
+      "type": "file",
+      "name": "TypingAnimation.tsx",
+      "filePath": "components/TypingAnimation.tsx",
+      "summary": "Typing animation component displaying text with character-by-character reveal.",
+      "tags": [
+        "component",
+        "animation",
+        "typing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/TypingAnimation.tsx:TypingAnimation",
+      "type": "function",
+      "name": "TypingAnimation",
+      "filePath": "components/TypingAnimation.tsx",
+      "summary": "Renders typing animation with configurable text, speed, and delay.",
+      "tags": [
+        "component",
+        "animation"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        10,
+        40
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:components/SearchResults.tsx",
+      "target": "file:components/FilterableCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/SearchResults.tsx",
+      "target": "function:components/SearchResults.tsx:SearchResults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/SearchResults.tsx",
+      "target": "function:components/SearchResults.tsx:SearchResults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/Skills.tsx",
+      "target": "function:components/Skills.tsx:Skills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/Skills.tsx",
+      "target": "function:components/Skills.tsx:Skills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/SocialLinks.tsx",
+      "target": "function:components/SocialLinks.tsx:SocialLinks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/SocialLinks.tsx",
+      "target": "function:components/SocialLinks.tsx:SocialLinks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/Terminal.tsx",
+      "target": "function:components/Terminal.tsx:Terminal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/Terminal.tsx",
+      "target": "function:components/Terminal.tsx:Terminal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/Testimonials.tsx",
+      "target": "function:components/Testimonials.tsx:Testimonials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/Testimonials.tsx",
+      "target": "function:components/Testimonials.tsx:Testimonials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/ThemeToggle.tsx",
+      "target": "function:components/ThemeToggle.tsx:ThemeToggle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/ThemeToggle.tsx",
+      "target": "function:components/ThemeToggle.tsx:ThemeToggle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/Timeline.tsx",
+      "target": "function:components/Timeline.tsx:Timeline",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/Timeline.tsx",
+      "target": "function:components/Timeline.tsx:Timeline",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/TypingAnimation.tsx",
+      "target": "function:components/TypingAnimation.tsx:TypingAnimation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/TypingAnimation.tsx",
+      "target": "function:components/TypingAnimation.tsx:TypingAnimation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

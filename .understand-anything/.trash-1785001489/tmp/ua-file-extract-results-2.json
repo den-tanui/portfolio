@@ -1,0 +1,1276 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 12,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "app/blog/BlogGrid.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "toCardData",
+          "startLine": 11,
+          "endLine": 18,
+          "params": [
+            "post"
+          ]
+        },
+        {
+          "name": "BlogGrid",
+          "startLine": 20,
+          "endLine": 78,
+          "params": [
+            "{ posts }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BlogGrid",
+          "line": 20,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "BlogGrid",
+          "callee": "useState",
+          "lineNumber": 21
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "useState",
+          "lineNumber": 22
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "useKeyboard",
+          "lineNumber": 24
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "setSearchVisible",
+          "lineNumber": 25
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "setSearchVisible",
+          "lineNumber": 26
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "setQuery",
+          "lineNumber": 26
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "useMemo",
+          "lineNumber": 29
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "posts.map",
+          "lineNumber": 29
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "useMemo",
+          "lineNumber": 30
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "parseQuery",
+          "lineNumber": 30
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "useMemo",
+          "lineNumber": 31
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "filterCards",
+          "lineNumber": 31
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "useMemo",
+          "lineNumber": 34
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "posts.filter",
+          "lineNumber": 35
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "filteredCards.some",
+          "lineNumber": 36
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "setSearchVisible",
+          "lineNumber": 50
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "setQuery",
+          "lineNumber": 50
+        },
+        {
+          "caller": "BlogGrid",
+          "callee": "visiblePosts.map",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/blog/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "BlogPage",
+          "startLine": 4,
+          "endLine": 7,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BlogPage",
+          "line": 4,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "BlogPage",
+          "callee": "getBlogPosts",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/projects/ProjectGrid.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "toCardData",
+          "startLine": 11,
+          "endLine": 18,
+          "params": [
+            "project"
+          ]
+        },
+        {
+          "name": "ProjectGrid",
+          "startLine": 20,
+          "endLine": 77,
+          "params": [
+            "{ projects }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProjectGrid",
+          "line": 20,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ProjectGrid",
+          "callee": "useState",
+          "lineNumber": 21
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "useState",
+          "lineNumber": 22
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "useKeyboard",
+          "lineNumber": 24
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "setSearchVisible",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "setSearchVisible",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "setQuery",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "useMemo",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "projects.map",
+          "lineNumber": 29
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "useMemo",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "parseQuery",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "useMemo",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "filterCards",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "useMemo",
+          "lineNumber": 33
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "projects.filter",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "filteredCards.some",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "setSearchVisible",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "setQuery",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ProjectGrid",
+          "callee": "visibleProjects.map",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/projects/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "ProjectsPage",
+          "startLine": 4,
+          "endLine": 7,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProjectsPage",
+          "line": 4,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ProjectsPage",
+          "callee": "getProjects",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/search/SearchResults.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "SearchResults",
+          "startLine": 21,
+          "endLine": 105,
+          "params": [
+            "{\n  query: initialQuery,\n  posts,\n  projects,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SearchResults",
+          "line": 21,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SearchResults",
+          "callee": "useState",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SearchResults",
+          "callee": "useState",
+          "lineNumber": 31
+        },
+        {
+          "caller": "SearchResults",
+          "callee": "useKeyboard",
+          "lineNumber": 33
+        },
+        {
+          "caller": "SearchResults",
+          "callee": "setSearchVisible",
+          "lineNumber": 34
+        },
+        {
+          "caller": "SearchResults",
+          "callee": "setSearchVisible",
+          "lineNumber": 35
+        },
+        {
+          "caller": "SearchResults",
+          "callee": "setQuery",
+          "lineNumber": 35
+        },
+        {
+          "caller": "SearchResults",
+          "callee": "setSearchVisible",
+          "lineNumber": 48
+        },
+        {
+          "caller": "SearchResults",
+          "callee": "setQuery",
+          "lineNumber": 48
+        },
+        {
+          "caller": "SearchResults",
+          "callee": "projects.map",
+          "lineNumber": 57
+        },
+        {
+          "caller": "SearchResults",
+          "callee": "posts.map",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/search/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "SearchPage",
+          "startLine": 5,
+          "endLine": 54,
+          "params": [
+            "{\n  searchParams,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SearchPage",
+          "line": 5,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SearchPage",
+          "callee": "getBlogPosts",
+          "lineNumber": 11
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "getProjects",
+          "lineNumber": 12
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "parseQuery",
+          "lineNumber": 14
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "posts.map",
+          "lineNumber": 15
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "projects.map",
+          "lineNumber": 25
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "filterCards",
+          "lineNumber": 36
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "filterCards",
+          "lineNumber": 37
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "postCards.filter",
+          "lineNumber": 40
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "filteredPosts.some",
+          "lineNumber": 41
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "projectCards.filter",
+          "lineNumber": 43
+        },
+        {
+          "caller": "SearchPage",
+          "callee": "filteredProjects.some",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/SearchBar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "SearchBar",
+          "startLine": 13,
+          "endLine": 51,
+          "params": [
+            "{ query, onChange, resultCount, isVisible, onClose }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SearchBar",
+          "line": 13,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SearchBar",
+          "callee": "useRef",
+          "lineNumber": 14
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "useEffect",
+          "lineNumber": 16
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "inputRef.current.focus",
+          "lineNumber": 18
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "useEffect",
+          "lineNumber": 22
+        },
+        {
+          "caller": "handler",
+          "callee": "onClose",
+          "lineNumber": 25
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "window.addEventListener",
+          "lineNumber": 27
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "window.removeEventListener",
+          "lineNumber": 28
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "onChange",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hooks/useKeyboard.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "fireKey",
+          "startLine": 5,
+          "endLine": 11,
+          "params": [
+            "key",
+            "target"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fireKey",
+          "callee": "vi.spyOn(event, 'target', 'get').mockReturnValue",
+          "lineNumber": 8
+        },
+        {
+          "caller": "fireKey",
+          "callee": "vi.spyOn",
+          "lineNumber": 8
+        },
+        {
+          "caller": "fireKey",
+          "callee": "window.dispatchEvent",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hooks/useKeyboard.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "useKeyboard",
+          "startLine": 18,
+          "endLine": 35,
+          "params": [
+            "shortcuts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useKeyboard",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useKeyboard",
+          "callee": "useRef",
+          "lineNumber": 19
+        },
+        {
+          "caller": "useKeyboard",
+          "callee": "useEffect",
+          "lineNumber": 22
+        },
+        {
+          "caller": "handler",
+          "callee": "e.preventDefault",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handler",
+          "callee": "s.handler",
+          "lineNumber": 28
+        },
+        {
+          "caller": "useKeyboard",
+          "callee": "window.addEventListener",
+          "lineNumber": 32
+        },
+        {
+          "caller": "useKeyboard",
+          "callee": "window.removeEventListener",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/content.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 162,
+      "functions": [
+        {
+          "name": "readDir",
+          "startLine": 34,
+          "endLine": 40,
+          "params": [
+            "dir"
+          ]
+        },
+        {
+          "name": "getGitDate",
+          "startLine": 45,
+          "endLine": 62,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "fetchReadme",
+          "startLine": 67,
+          "endLine": 90,
+          "params": [
+            "repoUrl"
+          ]
+        },
+        {
+          "name": "getBlogPosts",
+          "startLine": 94,
+          "endLine": 125,
+          "params": []
+        },
+        {
+          "name": "getBlogPost",
+          "startLine": 127,
+          "endLine": 129,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "getProjects",
+          "startLine": 131,
+          "endLine": 158,
+          "params": []
+        },
+        {
+          "name": "getProject",
+          "startLine": 160,
+          "endLine": 174,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "getAbout",
+          "startLine": 180,
+          "endLine": 185,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getBlogPosts",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "getBlogPost",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "getProjects",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "getProject",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "getAbout",
+          "line": 180,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readDir",
+          "callee": "fs.readdirSync(dir).filter",
+          "lineNumber": 36
+        },
+        {
+          "caller": "readDir",
+          "callee": "fs.readdirSync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "readDir",
+          "callee": "f.endsWith",
+          "lineNumber": 36
+        },
+        {
+          "caller": "readDir",
+          "callee": "f.endsWith",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getGitDate",
+          "callee": "execSync(\n      `git log --follow --diff-filter=A --format=%aI -- \"${filePath}\" 2>/dev/null | tail -1`,\n      { encoding: 'utf-8', cwd: process.cwd() },\n    ).trim",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getGitDate",
+          "callee": "execSync",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getGitDate",
+          "callee": "process.cwd",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getGitDate",
+          "callee": "output.split",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getGitDate",
+          "callee": "execSync(\n      `git log -1 --format=%aI -- \"${filePath}\" 2>/dev/null`,\n      { encoding: 'utf-8', cwd: process.cwd() },\n    ).trim",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getGitDate",
+          "callee": "execSync",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getGitDate",
+          "callee": "process.cwd",
+          "lineNumber": 55
+        },
+        {
+          "caller": "getGitDate",
+          "callee": "latest.split",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fetchReadme",
+          "callee": "repoUrl.match",
+          "lineNumber": 70
+        },
+        {
+          "caller": "fetchReadme",
+          "callee": "match[1].replace",
+          "lineNumber": 72
+        },
+        {
+          "caller": "fetchReadme",
+          "callee": "fetch",
+          "lineNumber": 81
+        },
+        {
+          "caller": "fetchReadme",
+          "callee": "res.text",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "path.join",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "process.cwd",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "readDir",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "files\n    .map((file) => {\n      const filePath = path.join(dir, file)\n      const raw = fs.readFileSync(filePath, 'utf-8')\n      const { data, content } = matter(raw)\n\n      // Date: try frontmatter first, then git log\n      let date: string\n      if (data.date) {\n        date = new Date(data.date).toISOString().split('T')[0]\n      } else {\n        date = getGitDate(filePath) || new Date().toISOString().split('T')[0]\n      }\n\n      return {\n        title: data.title,\n        slug: data.slug,\n        date,\n        tags: data.tags ?? [],\n        description: data.description,\n        image: data.image || '',\n        featured: data.featured ?? false,\n        author: data.author,\n        content,\n      }\n    })\n    .sort",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "files\n    .map",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "path.join",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "fs.readFileSync",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "matter",
+          "lineNumber": 102
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "new Date(data.date).toISOString().split",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "new Date(data.date).toISOString",
+          "lineNumber": 107
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "getGitDate",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "new Date().toISOString().split",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "new Date().toISOString",
+          "lineNumber": 109
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "new Date(b.date).getTime",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getBlogPosts",
+          "callee": "new Date(a.date).getTime",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getBlogPost",
+          "callee": "getBlogPosts().find",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getBlogPost",
+          "callee": "getBlogPosts",
+          "lineNumber": 128
+        },
+        {
+          "caller": "getProjects",
+          "callee": "path.join",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getProjects",
+          "callee": "process.cwd",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getProjects",
+          "callee": "readDir",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getProjects",
+          "callee": "files\n    .map((file) => {\n      const filePath = path.join(dir, file)\n      const raw = fs.readFileSync(filePath, 'utf-8')\n      const { data, content } = matter(raw)\n      const repoUrl = data.repo_url\n\n      return {\n        title: data.title,\n        slug: data.slug,\n        tags: data.tags ?? [],\n        languages: data.languages ?? [],\n        description: data.description,\n        image: data.image || '',\n        stars: data.stars ?? 0,\n        featured: data.featured ?? false,\n        author: data.author,\n        repo_url: repoUrl,\n        content:\n          content.trim() || data.body || '',  // empty body trigger\n      }\n    })\n    .sort",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getProjects",
+          "callee": "files\n    .map",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getProjects",
+          "callee": "path.join",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getProjects",
+          "callee": "fs.readFileSync",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getProjects",
+          "callee": "matter",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getProjects",
+          "callee": "content.trim",
+          "lineNumber": 154
+        },
+        {
+          "caller": "getProject",
+          "callee": "getProjects",
+          "lineNumber": 161
+        },
+        {
+          "caller": "getProject",
+          "callee": "projects.find",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getProject",
+          "callee": "project.content.trim",
+          "lineNumber": 166
+        },
+        {
+          "caller": "getProject",
+          "callee": "fetchReadme",
+          "lineNumber": 167
+        },
+        {
+          "caller": "getAbout",
+          "callee": "path.join",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getAbout",
+          "callee": "process.cwd",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getAbout",
+          "callee": "fs.readFileSync",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getAbout",
+          "callee": "matter",
+          "lineNumber": 183
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/utils.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 89,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "parseQuery",
+          "startLine": 7,
+          "endLine": 36,
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "highlightText",
+          "startLine": 38,
+          "endLine": 43,
+          "params": [
+            "text",
+            "terms"
+          ]
+        },
+        {
+          "name": "filterCards",
+          "startLine": 52,
+          "endLine": 69,
+          "params": [
+            "cards",
+            "query"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseQuery",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "highlightText",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "filterCards",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseQuery",
+          "callee": "quotedRegex.exec",
+          "lineNumber": 15
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "terms.push",
+          "lineNumber": 16
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "query.replace(quotedRegex, '').trim",
+          "lineNumber": 20
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "query.replace",
+          "lineNumber": 20
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "remaining.split",
+          "lineNumber": 23
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "part.startsWith",
+          "lineNumber": 25
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "tags.push",
+          "lineNumber": 26
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "part.slice",
+          "lineNumber": 26
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "part.startsWith",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "langs.push",
+          "lineNumber": 28
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "part.slice",
+          "lineNumber": 28
+        },
+        {
+          "caller": "parseQuery",
+          "callee": "terms.push",
+          "lineNumber": 30
+        },
+        {
+          "caller": "highlightText",
+          "callee": "terms.map",
+          "lineNumber": 40
+        },
+        {
+          "caller": "highlightText",
+          "callee": "t.replace",
+          "lineNumber": 40
+        },
+        {
+          "caller": "highlightText",
+          "callee": "escaped.join",
+          "lineNumber": 41
+        },
+        {
+          "caller": "highlightText",
+          "callee": "text.replace",
+          "lineNumber": 42
+        },
+        {
+          "caller": "filterCards",
+          "callee": "cards.filter",
+          "lineNumber": 53
+        },
+        {
+          "caller": "filterCards",
+          "callee": "query.terms.some",
+          "lineNumber": 56
+        },
+        {
+          "caller": "filterCards",
+          "callee": "card.title.toLowerCase().includes",
+          "lineNumber": 58
+        },
+        {
+          "caller": "filterCards",
+          "callee": "card.title.toLowerCase",
+          "lineNumber": 58
+        },
+        {
+          "caller": "filterCards",
+          "callee": "t.toLowerCase",
+          "lineNumber": 58
+        },
+        {
+          "caller": "filterCards",
+          "callee": "card.description.toLowerCase().includes",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filterCards",
+          "callee": "card.description.toLowerCase",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filterCards",
+          "callee": "t.toLowerCase",
+          "lineNumber": 59
+        },
+        {
+          "caller": "filterCards",
+          "callee": "query.tags.some",
+          "lineNumber": 63
+        },
+        {
+          "caller": "filterCards",
+          "callee": "card.tags.map((ct) => ct.toLowerCase()).includes",
+          "lineNumber": 63
+        },
+        {
+          "caller": "filterCards",
+          "callee": "card.tags.map",
+          "lineNumber": 63
+        },
+        {
+          "caller": "filterCards",
+          "callee": "ct.toLowerCase",
+          "lineNumber": 63
+        },
+        {
+          "caller": "filterCards",
+          "callee": "t.toLowerCase",
+          "lineNumber": 63
+        },
+        {
+          "caller": "filterCards",
+          "callee": "query.langs.some",
+          "lineNumber": 66
+        },
+        {
+          "caller": "filterCards",
+          "callee": "card.langs.map((cl) => cl.toLowerCase()).includes",
+          "lineNumber": 66
+        },
+        {
+          "caller": "filterCards",
+          "callee": "card.langs.map",
+          "lineNumber": 66
+        },
+        {
+          "caller": "filterCards",
+          "callee": "cl.toLowerCase",
+          "lineNumber": 66
+        },
+        {
+          "caller": "filterCards",
+          "callee": "l.toLowerCase",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

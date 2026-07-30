@@ -15,20 +15,29 @@ set -euo pipefail
 
 CONTENT_REPO="${CONTENT_REPO:-den-tanui/portfolio-content}"
 GITHUB_TOKEN="${GITHUB_TOKEN:-}"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
 if [ -z "$GITHUB_TOKEN" ]; then
-  echo "⚠️  GITHUB_TOKEN not set — skipping content clone (build will use local content/)"
-  exit 0
+  if [ -d "$PROJECT_DIR/content" ] && [ "$(ls -A "$PROJECT_DIR/content" 2>/dev/null)" ]; then
+    echo "⚠️  GITHUB_TOKEN not set — using existing local content/"
+    exit 0
+  else
+    echo "❌ GITHUB_TOKEN not set and content/ is empty or missing."
+    echo "   Set GITHUB_TOKEN to clone content from $CONTENT_REPO"
+    exit 1
+  fi
 fi
 
 TMP_DIR="/tmp/portfolio-content"
 echo "📦 Cloning $CONTENT_REPO..."
+rm -rf "$TMP_DIR"
 git clone --depth 1 \
   "https://x-access-token:${GITHUB_TOKEN}@github.com/${CONTENT_REPO}.git" \
   "$TMP_DIR"
 
 echo "📋 Copying content/ into project..."
-rm -rf "$(dirname "$0")/../content"
-cp -r "$TMP_DIR/content" "$(dirname "$0")/../content"
+rm -rf "$PROJECT_DIR/content"
+cp -r "$TMP_DIR/content" "$PROJECT_DIR"
 
 echo "✅ Content repo cloned and copied."

@@ -1,0 +1,15 @@
+{
+  "projectRoot": "/home/projects/portfolio-website",
+  "batchFiles": [
+    {"path": "app/admin/AdminClient.tsx", "language": "typescript", "sizeLines": 792, "fileCategory": "code"},
+    {"path": "lib/admin-actions.ts", "language": "typescript", "sizeLines": 252, "fileCategory": "code"},
+    {"path": "lib/admin-shared.ts", "language": "typescript", "sizeLines": 57, "fileCategory": "code"},
+    {"path": "lib/github-client.ts", "language": "typescript", "sizeLines": 107, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "app/admin/AdminClient.tsx": ["components/Popup.tsx", "components/TerminalPrompt.tsx", "lib/admin-actions.ts", "lib/admin-shared.ts", "lib/content.ts", "lib/github-client.ts"],
+    "lib/admin-actions.ts": ["lib/github-client.ts"],
+    "lib/admin-shared.ts": [],
+    "lib/github-client.ts": []
+  }
+}

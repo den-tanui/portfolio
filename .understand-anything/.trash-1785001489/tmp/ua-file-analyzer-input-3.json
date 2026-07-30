@@ -1,0 +1,27 @@
+{
+  "projectRoot": "/home/projects/portfolio-website",
+  "batchFiles": [
+    {"path": "app/about/page.tsx", "language": "typescript", "sizeLines": 35, "fileCategory": "code"},
+    {"path": "app/blog/[slug]/page.tsx", "language": "typescript", "sizeLines": 93, "fileCategory": "code"},
+    {"path": "app/page.tsx", "language": "typescript", "sizeLines": 77, "fileCategory": "code"},
+    {"path": "app/projects/[slug]/page.tsx", "language": "typescript", "sizeLines": 97, "fileCategory": "code"},
+    {"path": "components/CodeBlock.tsx", "language": "typescript", "sizeLines": 16, "fileCategory": "code"},
+    {"path": "components/FilterableCard.tsx", "language": "typescript", "sizeLines": 54, "fileCategory": "code"},
+    {"path": "components/LangPill.tsx", "language": "typescript", "sizeLines": 10, "fileCategory": "code"},
+    {"path": "components/TagPill.tsx", "language": "typescript", "sizeLines": 10, "fileCategory": "code"},
+    {"path": "components/TerminalPrompt.tsx", "language": "typescript", "sizeLines": 9, "fileCategory": "code"},
+    {"path": "components/TrafficLightDots.tsx", "language": "typescript", "sizeLines": 9, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "app/about/page.tsx": ["components/CodeBlock.tsx", "components/TerminalPrompt.tsx", "lib/content.ts"],
+    "app/blog/[slug]/page.tsx": ["components/CodeBlock.tsx", "components/TerminalPrompt.tsx", "lib/content.ts"],
+    "app/page.tsx": ["components/FilterableCard.tsx", "components/TerminalPrompt.tsx", "lib/content.ts"],
+    "app/projects/[slug]/page.tsx": ["components/CodeBlock.tsx", "components/LangPill.tsx", "components/TagPill.tsx", "components/TerminalPrompt.tsx", "lib/content.ts"],
+    "components/CodeBlock.tsx": [],
+    "components/FilterableCard.tsx": ["components/LangPill.tsx", "components/TagPill.tsx", "components/TrafficLightDots.tsx"],
+    "components/LangPill.tsx": [],
+    "components/TagPill.tsx": [],
+    "components/TerminalPrompt.tsx": [],
+    "components/TrafficLightDots.tsx": []
+  }
+}

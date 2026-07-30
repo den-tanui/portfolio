@@ -8,9 +8,9 @@ interface CvPickerProps {
 }
 
 const FORMATS = [
-  { id: 'pdf' as const, label: 'cv.pdf', desc: 'Print-ready format' },
-  { id: 'md' as const, label: 'cv.md', desc: 'Plain text, readable' },
-  { id: 'json' as const, label: 'cv.json', desc: 'Machine-readable data' },
+  { label: 'cv.pdf', desc: 'Print-ready format', path: '/cv/cv.pdf' },
+  { label: 'cv.md', desc: 'Plain text, readable', path: '/cv/cv.md' },
+  { label: 'cv.json', desc: 'Machine-readable data', path: '/cv/cv.json' },
 ]
 
 export default function CvPicker({ isOpen, onClose }: CvPickerProps) {
@@ -22,17 +22,16 @@ export default function CvPicker({ isOpen, onClose }: CvPickerProps) {
       </div>
       <div className="space-y-2">
         {FORMATS.map((fmt) => (
-          <button
-            key={fmt.id}
-            onClick={() => {
-              window.open(`/api/cv?format=${fmt.id}`, '_blank')
-              onClose()
-            }}
-            className="w-full text-left p-3 border border-outline rounded hover:border-secondary hover:bg-surface-container-high transition-colors"
+          <a
+            key={fmt.path}
+            href={fmt.path}
+            download
+            onClick={onClose}
+            className="block w-full text-left p-3 border border-outline rounded hover:border-secondary hover:bg-surface-container-high transition-colors"
           >
             <span className="text-secondary font-bold">[{fmt.label}]</span>
             <span className="text-on-surface-variant ml-2">{fmt.desc}</span>
-          </button>
+          </a>
         ))}
       </div>
     </Popup>

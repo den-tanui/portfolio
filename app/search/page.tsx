@@ -2,6 +2,11 @@ import { getBlogPosts, getProjects } from '@/lib/content'
 import { parseQuery, filterCards } from '@/lib/utils'
 import SearchResults from './SearchResults'
 
+/* Pre-render at build time for static export (GitHub Pages).
+   With no query param, all content is shown. Client-side filtering
+   is handled by SearchResults. */
+export const dynamic = 'force-static'
+
 export default async function SearchPage({
   searchParams,
 }: {

@@ -1,0 +1,528 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "app/about/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "AboutPage",
+          "startLine": 21,
+          "endLine": 35,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AboutPage",
+          "line": 21,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AboutPage",
+          "callee": "getAbout",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/blog/[slug]/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "startLine": 8,
+          "endLine": 10,
+          "params": []
+        },
+        {
+          "name": "BlogPostPage",
+          "startLine": 27,
+          "endLine": 93,
+          "params": [
+            "{\n  params,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateStaticParams",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "BlogPostPage",
+          "line": 27,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateStaticParams",
+          "callee": "getBlogPosts().map",
+          "lineNumber": 9
+        },
+        {
+          "caller": "generateStaticParams",
+          "callee": "getBlogPosts",
+          "lineNumber": 9
+        },
+        {
+          "caller": "BlogPostPage",
+          "callee": "getBlogPost",
+          "lineNumber": 33
+        },
+        {
+          "caller": "BlogPostPage",
+          "callee": "notFound",
+          "lineNumber": 34
+        },
+        {
+          "caller": "BlogPostPage",
+          "callee": "getBlogPosts()\n    .filter((p) => p.slug !== slug && p.tags.some((t) => post.tags.includes(t)))\n    .slice",
+          "lineNumber": 36
+        },
+        {
+          "caller": "BlogPostPage",
+          "callee": "getBlogPosts()\n    .filter",
+          "lineNumber": 36
+        },
+        {
+          "caller": "BlogPostPage",
+          "callee": "getBlogPosts",
+          "lineNumber": 36
+        },
+        {
+          "caller": "BlogPostPage",
+          "callee": "p.tags.some",
+          "lineNumber": 37
+        },
+        {
+          "caller": "BlogPostPage",
+          "callee": "post.tags.includes",
+          "lineNumber": 37
+        },
+        {
+          "caller": "BlogPostPage",
+          "callee": "post.tags.map",
+          "lineNumber": 53
+        },
+        {
+          "caller": "BlogPostPage",
+          "callee": "related.map",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "Home",
+          "startLine": 6,
+          "endLine": 77,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Home",
+          "line": 6,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Home",
+          "callee": "getProjects().filter((p) => p.featured).slice",
+          "lineNumber": 7
+        },
+        {
+          "caller": "Home",
+          "callee": "getProjects().filter",
+          "lineNumber": 7
+        },
+        {
+          "caller": "Home",
+          "callee": "getProjects",
+          "lineNumber": 7
+        },
+        {
+          "caller": "Home",
+          "callee": "getBlogPosts().filter((p) => p.featured).slice",
+          "lineNumber": 8
+        },
+        {
+          "caller": "Home",
+          "callee": "getBlogPosts().filter",
+          "lineNumber": 8
+        },
+        {
+          "caller": "Home",
+          "callee": "getBlogPosts",
+          "lineNumber": 8
+        },
+        {
+          "caller": "Home",
+          "callee": "featuredProjects.map",
+          "lineNumber": 42
+        },
+        {
+          "caller": "Home",
+          "callee": "recentPosts.map",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "app/projects/[slug]/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "startLine": 10,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "ProjectPage",
+          "startLine": 29,
+          "endLine": 97,
+          "params": [
+            "{\n  params,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateStaticParams",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectPage",
+          "line": 29,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateStaticParams",
+          "callee": "getProjects().map",
+          "lineNumber": 11
+        },
+        {
+          "caller": "generateStaticParams",
+          "callee": "getProjects",
+          "lineNumber": 11
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "getProject",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "notFound",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "getProjects()\n    .filter((p) => p.slug !== slug && p.tags.some((t) => project.tags.includes(t)))\n    .slice",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "getProjects()\n    .filter",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "getProjects",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "p.tags.some",
+          "lineNumber": 39
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "project.tags.includes",
+          "lineNumber": 39
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "project.tags.map",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "project.languages.map",
+          "lineNumber": 65
+        },
+        {
+          "caller": "ProjectPage",
+          "callee": "related.map",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/CodeBlock.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 16,
+      "functions": [
+        {
+          "name": "CodeBlock",
+          "startLine": 1,
+          "endLine": 16,
+          "params": [
+            "{ language, code }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CodeBlock",
+          "line": 1,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/FilterableCard.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "FilterableCard",
+          "startLine": 19,
+          "endLine": 54,
+          "params": [
+            "{ href, title, description, tags, langs, image, index = 0 }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FilterableCard",
+          "line": 19,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "FilterableCard",
+          "callee": "useRouter",
+          "lineNumber": 20
+        },
+        {
+          "caller": "searchTag",
+          "callee": "router.push",
+          "lineNumber": 23
+        },
+        {
+          "caller": "searchLang",
+          "callee": "router.push",
+          "lineNumber": 27
+        },
+        {
+          "caller": "FilterableCard",
+          "callee": "tags.map",
+          "lineNumber": 48
+        },
+        {
+          "caller": "FilterableCard",
+          "callee": "searchTag",
+          "lineNumber": 48
+        },
+        {
+          "caller": "FilterableCard",
+          "callee": "langs.map",
+          "lineNumber": 49
+        },
+        {
+          "caller": "FilterableCard",
+          "callee": "searchLang",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/LangPill.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "LangPill",
+          "startLine": 1,
+          "endLine": 10,
+          "params": [
+            "{ lang, onClick }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LangPill",
+          "line": 1,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/TagPill.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "TagPill",
+          "startLine": 1,
+          "endLine": 10,
+          "params": [
+            "{ tag, onClick }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TagPill",
+          "line": 1,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/TerminalPrompt.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "TerminalPrompt",
+          "startLine": 1,
+          "endLine": 9,
+          "params": [
+            "{ path }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TerminalPrompt",
+          "line": 1,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/TrafficLightDots.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "TrafficLightDots",
+          "startLine": 1,
+          "endLine": 9,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TrafficLightDots",
+          "line": 1,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

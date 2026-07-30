@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    {
+      "id": "document:content/projects/dotfiles-manager.mdx",
+      "type": "document",
+      "name": "dotfiles-manager",
+      "filePath": "content/projects/dotfiles-manager.mdx",
+      "summary": "Project showcase page for dotfiles-manager — an automated dotfiles bootstrap framework with modular configs, secret management via age/sops, one-command setup, and multi-OS (Linux/macOS) support.",
+      "tags": ["dotfiles", "automation", "devops", "shell", "yaml", "project-showcase"],
+      "language": "markdown",
+      "complexity": "simple",
+      "languageNotes": null
+    },
+    {
+      "id": "document:content/projects/fzf-scripts.mdx",
+      "type": "document",
+      "name": "fzf-scripts",
+      "filePath": "content/projects/fzf-scripts.mdx",
+      "summary": "Project showcase page for fzf-scripts — a collection of fzf-powered interactive shell scripts for daily terminal workflows including file search, git commit browsing, process killing, and Docker management.",
+      "tags": ["fzf", "cli", "automation", "shell", "python", "project-showcase"],
+      "language": "markdown",
+      "complexity": "simple",
+      "languageNotes": null
+    },
+    {
+      "id": "document:content/projects/neovim-config.mdx",
+      "type": "document",
+      "name": "neovim-config",
+      "filePath": "content/projects/neovim-config.mdx",
+      "summary": "Project showcase page for neovim-config — a from-scratch Neovim configuration in Lua with LSP via nvim-lspconfig, Treesitter highlighting, lazy-loading plugins, and Mason auto-installer.",
+      "tags": ["neovim", "editor", "lua", "project-showcase"],
+      "language": "markdown",
+      "complexity": "simple",
+      "languageNotes": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:content/projects/dotfiles-manager.mdx",
+      "target": "document:content/projects/fzf-scripts.mdx",
+      "type": "related",
+      "label": "fellow project showcase",
+      "weight": 0.5
+    },
+    {
+      "source": "document:content/projects/dotfiles-manager.mdx",
+      "target": "document:content/projects/neovim-config.mdx",
+      "type": "related",
+      "label": "fellow project showcase",
+      "weight": 0.5
+    },
+    {
+      "source": "document:content/projects/fzf-scripts.mdx",
+      "target": "document:content/projects/neovim-config.mdx",
+      "type": "related",
+      "label": "fellow project showcase",
+      "weight": 0.5
+    }
+  ]
+}

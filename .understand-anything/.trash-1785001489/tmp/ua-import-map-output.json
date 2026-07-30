@@ -1,0 +1,204 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 78,
+    "filesWithImports": 32,
+    "totalEdges": 84
+  },
+  "importMap": {
+    ".github/workflows/ci.yml": [],
+    ".prettierignore": [],
+    ".understand-anything/.understandignore": [],
+    "AGENTS.md": [],
+    "app/about/page.tsx": [
+      "components/CodeBlock.tsx",
+      "components/TerminalPrompt.tsx",
+      "lib/content.ts"
+    ],
+    "app/admin/AdminClient.tsx": [
+      "components/Popup.tsx",
+      "components/TerminalPrompt.tsx",
+      "lib/admin-actions.ts",
+      "lib/admin-shared.ts",
+      "lib/content.ts",
+      "lib/github-client.ts"
+    ],
+    "app/admin/login/auth-buttons.tsx": [],
+    "app/admin/login/page.tsx": [
+      "app/admin/login/auth-buttons.tsx",
+      "components/GitHubDeviceFlow.tsx",
+      "components/TerminalPrompt.tsx",
+      "lib/auth.ts"
+    ],
+    "app/admin/page.tsx": [
+      "app/admin/AdminClient.tsx",
+      "lib/auth.ts",
+      "lib/content.ts"
+    ],
+    "app/api/auth/[...nextauth]/route.ts": [
+      "lib/auth.ts"
+    ],
+    "app/api/cv/route.ts": [],
+    "app/blog/[slug]/page.tsx": [
+      "components/CodeBlock.tsx",
+      "components/TerminalPrompt.tsx",
+      "lib/content.ts"
+    ],
+    "app/blog/BlogGrid.tsx": [
+      "components/FilterableCard.tsx",
+      "components/SearchBar.tsx",
+      "components/TerminalPrompt.tsx",
+      "hooks/useKeyboard.ts",
+      "lib/content.ts",
+      "lib/utils.ts"
+    ],
+    "app/blog/page.tsx": [
+      "app/blog/BlogGrid.tsx",
+      "lib/content.ts"
+    ],
+    "app/globals.css": [],
+    "app/layout.tsx": [
+      "app/globals.css",
+      "app/providers.tsx"
+    ],
+    "app/not-found.tsx": [],
+    "app/page.tsx": [
+      "components/FilterableCard.tsx",
+      "components/TerminalPrompt.tsx",
+      "lib/content.ts"
+    ],
+    "app/projects/[slug]/page.tsx": [
+      "components/CodeBlock.tsx",
+      "components/LangPill.tsx",
+      "components/TagPill.tsx",
+      "components/TerminalPrompt.tsx",
+      "lib/content.ts"
+    ],
+    "app/projects/page.tsx": [
+      "app/projects/ProjectGrid.tsx",
+      "lib/content.ts"
+    ],
+    "app/projects/ProjectGrid.tsx": [
+      "components/FilterableCard.tsx",
+      "components/SearchBar.tsx",
+      "components/TerminalPrompt.tsx",
+      "hooks/useKeyboard.ts",
+      "lib/content.ts",
+      "lib/utils.ts"
+    ],
+    "app/providers.tsx": [
+      "components/AppFooter.tsx",
+      "components/AppHeader.tsx",
+      "components/ContactModal.tsx",
+      "components/CvPicker.tsx",
+      "components/HelpModal.tsx",
+      "components/ReportModal.tsx",
+      "components/SessionProvider.tsx",
+      "components/ToastContainer.tsx",
+      "context/SettingsContext.tsx",
+      "context/ThemeContext.tsx",
+      "context/ToastContext.tsx",
+      "hooks/useKeyboard.ts",
+      "hooks/useLenis.ts"
+    ],
+    "app/search/page.tsx": [
+      "app/search/SearchResults.tsx",
+      "lib/content.ts",
+      "lib/utils.ts"
+    ],
+    "app/search/SearchResults.tsx": [
+      "components/FilterableCard.tsx",
+      "components/SearchBar.tsx",
+      "components/TerminalPrompt.tsx",
+      "hooks/useKeyboard.ts"
+    ],
+    "CLAUDE.md": [],
+    "components/AppFooter.tsx": [],
+    "components/AppHeader.tsx": [
+      "components/SettingsDropdown.tsx"
+    ],
+    "components/CodeBlock.tsx": [],
+    "components/ContactModal.tsx": [
+      "components/Popup.tsx"
+    ],
+    "components/CvPicker.tsx": [
+      "components/Popup.tsx"
+    ],
+    "components/FilterableCard.tsx": [
+      "components/LangPill.tsx",
+      "components/TagPill.tsx",
+      "components/TrafficLightDots.tsx"
+    ],
+    "components/GitHubDeviceFlow.tsx": [],
+    "components/HelpModal.tsx": [
+      "components/Popup.tsx"
+    ],
+    "components/LangPill.tsx": [],
+    "components/Popup.tsx": [],
+    "components/ReportModal.tsx": [
+      "components/Popup.tsx"
+    ],
+    "components/SearchBar.tsx": [],
+    "components/SessionProvider.tsx": [],
+    "components/SettingsDropdown.tsx": [
+      "context/SettingsContext.tsx"
+    ],
+    "components/TagPill.tsx": [],
+    "components/TerminalPrompt.tsx": [],
+    "components/ToastContainer.tsx": [
+      "context/ToastContext.tsx"
+    ],
+    "components/TrafficLightDots.tsx": [],
+    "content/about.mdx": [],
+    "content/blog/fzf-workflows.mdx": [],
+    "content/blog/rust-cli-tools.mdx": [],
+    "content/blog/tmux-workflow.mdx": [],
+    "content/projects/dotfiles-manager.mdx": [],
+    "content/projects/fzf-scripts.mdx": [],
+    "content/projects/neovim-config.mdx": [],
+    "context/SettingsContext.tsx": [
+      "hooks/useLocalStorage.ts"
+    ],
+    "context/ThemeContext.tsx": [
+      "hooks/useLocalStorage.ts"
+    ],
+    "context/ToastContext.tsx": [],
+    "eslint.config.mjs": [],
+    "hooks/useKeyboard.test.ts": [
+      "hooks/useKeyboard.ts"
+    ],
+    "hooks/useKeyboard.ts": [],
+    "hooks/useLenis.ts": [],
+    "hooks/useLocalStorage.test.ts": [
+      "hooks/useLocalStorage.ts"
+    ],
+    "hooks/useLocalStorage.ts": [],
+    "lib/admin-actions.ts": [
+      "lib/github-client.ts"
+    ],
+    "lib/admin-shared.ts": [],
+    "lib/auth.config.ts": [],
+    "lib/auth.ts": [
+      "lib/auth.config.ts"
+    ],
+    "lib/content.ts": [],
+    "lib/github-client.ts": [],
+    "lib/github.ts": [],
+    "lib/utils.test.ts": [
+      "lib/utils.ts"
+    ],
+    "lib/utils.ts": [],
+    "middleware.ts": [
+      "lib/auth.ts"
+    ],
+    "next.config.ts": [],
+    "package.json": [],
+    "postcss.config.mjs": [],
+    "public/cv/cv.json": [],
+    "public/cv/cv.md": [],
+    "README.md": [],
+    "scripts/prebuild.sh": [],
+    "tsconfig.json": [],
+    "vitest.config.ts": []
+  }
+}

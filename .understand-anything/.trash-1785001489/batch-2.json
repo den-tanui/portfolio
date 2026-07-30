@@ -1,0 +1,781 @@
+{
+  "nodes": [
+    {
+      "id": "file:app/blog/BlogGrid.tsx",
+      "type": "file",
+      "name": "BlogGrid.tsx",
+      "filePath": "app/blog/BlogGrid.tsx",
+      "summary": "Blog post grid component with search filtering, keyboard shortcuts, and card layout rendering.",
+      "tags": [
+        "component",
+        "grid",
+        "search"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/blog/BlogGrid.tsx:BlogGrid",
+      "type": "function",
+      "name": "BlogGrid",
+      "filePath": "app/blog/BlogGrid.tsx",
+      "summary": "Grid component rendering blog posts with search and filter capabilities.",
+      "tags": [
+        "component",
+        "grid"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        20,
+        78
+      ]
+    },
+    {
+      "id": "file:app/blog/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "app/blog/page.tsx",
+      "summary": "Blog listing page that fetches and displays all blog posts.",
+      "tags": [
+        "page",
+        "blog"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/blog/page.tsx:BlogPage",
+      "type": "function",
+      "name": "BlogPage",
+      "filePath": "app/blog/page.tsx",
+      "summary": "Blog page component fetching posts via getBlogPosts.",
+      "tags": [
+        "page",
+        "server-component"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        4,
+        7
+      ]
+    },
+    {
+      "id": "file:app/projects/ProjectGrid.tsx",
+      "type": "file",
+      "name": "ProjectGrid.tsx",
+      "filePath": "app/projects/ProjectGrid.tsx",
+      "summary": "Project grid component with search filtering and card layout rendering.",
+      "tags": [
+        "component",
+        "grid",
+        "search"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/projects/ProjectGrid.tsx:ProjectGrid",
+      "type": "function",
+      "name": "ProjectGrid",
+      "filePath": "app/projects/ProjectGrid.tsx",
+      "summary": "Grid component rendering projects with search and filter capabilities.",
+      "tags": [
+        "component",
+        "grid"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        20,
+        77
+      ]
+    },
+    {
+      "id": "file:app/projects/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "app/projects/page.tsx",
+      "summary": "Projects listing page that fetches and displays all projects.",
+      "tags": [
+        "page",
+        "projects"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/projects/page.tsx:ProjectsPage",
+      "type": "function",
+      "name": "ProjectsPage",
+      "filePath": "app/projects/page.tsx",
+      "summary": "Projects page component fetching projects via getProjects.",
+      "tags": [
+        "page",
+        "server-component"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        4,
+        7
+      ]
+    },
+    {
+      "id": "file:app/search/SearchResults.tsx",
+      "type": "file",
+      "name": "SearchResults.tsx",
+      "filePath": "app/search/SearchResults.tsx",
+      "summary": "Search results component displaying filtered projects and blog posts.",
+      "tags": [
+        "component",
+        "search",
+        "results"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/search/SearchResults.tsx:SearchResults",
+      "type": "function",
+      "name": "SearchResults",
+      "filePath": "app/search/SearchResults.tsx",
+      "summary": "Search results component with live filtering across posts and projects.",
+      "tags": [
+        "component",
+        "search"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        21,
+        105
+      ]
+    },
+    {
+      "id": "file:app/search/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "app/search/page.tsx",
+      "summary": "Search page that pre-filters content based on URL query parameters.",
+      "tags": [
+        "page",
+        "search"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/search/page.tsx:SearchPage",
+      "type": "function",
+      "name": "SearchPage",
+      "filePath": "app/search/page.tsx",
+      "summary": "Search page server component parsing URL params and filtering content.",
+      "tags": [
+        "page",
+        "server-component"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        5,
+        54
+      ]
+    },
+    {
+      "id": "file:components/SearchBar.tsx",
+      "type": "file",
+      "name": "SearchBar.tsx",
+      "filePath": "components/SearchBar.tsx",
+      "summary": "Reusable search input component with auto-focus and Escape key dismiss.",
+      "tags": [
+        "component",
+        "search",
+        "input"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/SearchBar.tsx:SearchBar",
+      "type": "function",
+      "name": "SearchBar",
+      "filePath": "components/SearchBar.tsx",
+      "summary": "Search input with auto-focus and keyboard dismiss.",
+      "tags": [
+        "component",
+        "input"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        13,
+        51
+      ]
+    },
+    {
+      "id": "file:hooks/useKeyboard.test.ts",
+      "type": "file",
+      "name": "useKeyboard.test.ts",
+      "filePath": "hooks/useKeyboard.test.ts",
+      "summary": "Test suite for useKeyboard hook covering shortcut registration and event handling.",
+      "tags": [
+        "test",
+        "hook",
+        "keyboard"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:hooks/useKeyboard.ts",
+      "type": "file",
+      "name": "useKeyboard.ts",
+      "filePath": "hooks/useKeyboard.ts",
+      "summary": "Custom hook for registering global keyboard shortcuts with key/modifier matching.",
+      "tags": [
+        "hook",
+        "keyboard",
+        "shortcuts"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hooks/useKeyboard.ts:useKeyboard",
+      "type": "function",
+      "name": "useKeyboard",
+      "filePath": "hooks/useKeyboard.ts",
+      "summary": "Hook registering keyboard shortcuts on the window keydown event.",
+      "tags": [
+        "hook",
+        "keyboard"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        18,
+        35
+      ]
+    },
+    {
+      "id": "file:lib/content.ts",
+      "type": "file",
+      "name": "content.ts",
+      "filePath": "lib/content.ts",
+      "summary": "Content management module reading MDX blog posts and projects from disk with frontmatter parsing.",
+      "tags": [
+        "service",
+        "content",
+        "mdx"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:lib/content.ts:getBlogPosts",
+      "type": "function",
+      "name": "getBlogPosts",
+      "filePath": "lib/content.ts",
+      "summary": "Reads all blog MDX files, parses frontmatter, and returns sorted posts.",
+      "tags": [
+        "data-fetching",
+        "mdx"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        94,
+        125
+      ]
+    },
+    {
+      "id": "function:lib/content.ts:getBlogPost",
+      "type": "function",
+      "name": "getBlogPost",
+      "filePath": "lib/content.ts",
+      "summary": "Finds a single blog post by slug from the blog posts list.",
+      "tags": [
+        "data-fetching"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        127,
+        129
+      ]
+    },
+    {
+      "id": "function:lib/content.ts:getProjects",
+      "type": "function",
+      "name": "getProjects",
+      "filePath": "lib/content.ts",
+      "summary": "Reads all project MDX files, parses frontmatter, and returns sorted projects.",
+      "tags": [
+        "data-fetching",
+        "mdx"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        131,
+        158
+      ]
+    },
+    {
+      "id": "function:lib/content.ts:getProject",
+      "type": "function",
+      "name": "getProject",
+      "filePath": "lib/content.ts",
+      "summary": "Finds a project by slug and fetches its README from GitHub if available.",
+      "tags": [
+        "data-fetching",
+        "github"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        160,
+        174
+      ]
+    },
+    {
+      "id": "function:lib/content.ts:getAbout",
+      "type": "function",
+      "name": "getAbout",
+      "filePath": "lib/content.ts",
+      "summary": "Reads and parses the about.mdx content file.",
+      "tags": [
+        "data-fetching"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        180,
+        185
+      ]
+    },
+    {
+      "id": "file:lib/utils.test.ts",
+      "type": "file",
+      "name": "utils.test.ts",
+      "filePath": "lib/utils.test.ts",
+      "summary": "Test suite for parseQuery, highlightText, and filterCards utility functions.",
+      "tags": [
+        "test",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:lib/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "lib/utils.ts",
+      "summary": "Utility functions for search query parsing, text highlighting, and card filtering.",
+      "tags": [
+        "utility",
+        "search",
+        "filtering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:lib/utils.ts:parseQuery",
+      "type": "function",
+      "name": "parseQuery",
+      "filePath": "lib/utils.ts",
+      "summary": "Parses search queries into terms, tags, and language filters.",
+      "tags": [
+        "utility",
+        "search"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        7,
+        36
+      ]
+    },
+    {
+      "id": "function:lib/utils.ts:filterCards",
+      "type": "function",
+      "name": "filterCards",
+      "filePath": "lib/utils.ts",
+      "summary": "Filters card arrays by matching query terms against title, description, tags, and languages.",
+      "tags": [
+        "utility",
+        "filtering"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        52,
+        69
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:app/blog/BlogGrid.tsx",
+      "target": "file:components/FilterableCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/blog/BlogGrid.tsx",
+      "target": "file:components/SearchBar.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/blog/BlogGrid.tsx",
+      "target": "file:components/TerminalPrompt.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/blog/BlogGrid.tsx",
+      "target": "file:hooks/useKeyboard.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/blog/BlogGrid.tsx",
+      "target": "file:lib/content.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/blog/BlogGrid.tsx",
+      "target": "file:lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/blog/BlogGrid.tsx",
+      "target": "function:app/blog/BlogGrid.tsx:BlogGrid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/blog/BlogGrid.tsx",
+      "target": "function:app/blog/BlogGrid.tsx:BlogGrid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/blog/page.tsx",
+      "target": "file:app/blog/BlogGrid.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/blog/page.tsx",
+      "target": "file:lib/content.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/blog/page.tsx",
+      "target": "function:app/blog/page.tsx:BlogPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/blog/page.tsx",
+      "target": "function:app/blog/page.tsx:BlogPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/projects/ProjectGrid.tsx",
+      "target": "file:components/FilterableCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/projects/ProjectGrid.tsx",
+      "target": "file:components/SearchBar.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/projects/ProjectGrid.tsx",
+      "target": "file:components/TerminalPrompt.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/projects/ProjectGrid.tsx",
+      "target": "file:hooks/useKeyboard.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/projects/ProjectGrid.tsx",
+      "target": "file:lib/content.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/projects/ProjectGrid.tsx",
+      "target": "file:lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/projects/ProjectGrid.tsx",
+      "target": "function:app/projects/ProjectGrid.tsx:ProjectGrid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/projects/ProjectGrid.tsx",
+      "target": "function:app/projects/ProjectGrid.tsx:ProjectGrid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/projects/page.tsx",
+      "target": "file:app/projects/ProjectGrid.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/projects/page.tsx",
+      "target": "file:lib/content.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/projects/page.tsx",
+      "target": "function:app/projects/page.tsx:ProjectsPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/projects/page.tsx",
+      "target": "function:app/projects/page.tsx:ProjectsPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/search/SearchResults.tsx",
+      "target": "file:components/FilterableCard.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/search/SearchResults.tsx",
+      "target": "file:components/SearchBar.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/search/SearchResults.tsx",
+      "target": "file:components/TerminalPrompt.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/search/SearchResults.tsx",
+      "target": "file:hooks/useKeyboard.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/search/SearchResults.tsx",
+      "target": "function:app/search/SearchResults.tsx:SearchResults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/search/SearchResults.tsx",
+      "target": "function:app/search/SearchResults.tsx:SearchResults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/search/page.tsx",
+      "target": "file:app/search/SearchResults.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/search/page.tsx",
+      "target": "file:lib/content.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/search/page.tsx",
+      "target": "file:lib/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/search/page.tsx",
+      "target": "function:app/search/page.tsx:SearchPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/search/page.tsx",
+      "target": "function:app/search/page.tsx:SearchPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/SearchBar.tsx",
+      "target": "function:components/SearchBar.tsx:SearchBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/SearchBar.tsx",
+      "target": "function:components/SearchBar.tsx:SearchBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:hooks/useKeyboard.test.ts",
+      "target": "file:hooks/useKeyboard.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:hooks/useKeyboard.ts",
+      "target": "function:hooks/useKeyboard.ts:useKeyboard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hooks/useKeyboard.ts",
+      "target": "function:hooks/useKeyboard.ts:useKeyboard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getBlogPosts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getBlogPosts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getBlogPost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getBlogPost",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getProjects",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getProjects",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getProject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getProject",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getAbout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/content.ts",
+      "target": "function:lib/content.ts:getAbout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/utils.test.ts",
+      "target": "file:lib/utils.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:lib/utils.ts",
+      "target": "function:lib/utils.ts:parseQuery",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/utils.ts",
+      "target": "function:lib/utils.ts:parseQuery",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:lib/utils.ts",
+      "target": "function:lib/utils.ts:filterCards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:lib/utils.ts",
+      "target": "function:lib/utils.ts:filterCards",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

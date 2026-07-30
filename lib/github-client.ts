@@ -1,8 +1,6 @@
 /**
- * GitHub API client — works in both browser and server.
- *
- * - Browser (oauth mode): reads token from sessionStorage
- * - Server (cookie mode): gets token from caller via param
+ * GitHub API client — writes content to the portfolio-content repo.
+ * Uses GITHUB_TOKEN from env var (server-side only).
  */
 const API = 'https://api.github.com'
 
@@ -21,16 +19,8 @@ function getRepo(): string {
   )
 }
 
-/**
- * Get the GitHub token — caller must supply it.
- * In oauth mode, the browser calls this function with sessionStorage's token.
- * In cookie mode, the server action passes process.env.GITHUB_TOKEN.
- */
-export function getToken(): string | null {
-  if (typeof window !== 'undefined') {
-    return sessionStorage.getItem('github_token')
-  }
-  return null
+function getToken(): string | null {
+  return process.env.GITHUB_TOKEN || null
 }
 
 export async function getFileMeta(

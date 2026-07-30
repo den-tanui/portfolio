@@ -1,0 +1,13 @@
+{
+  "projectRoot": "/home/projects/portfolio-website",
+  "batchFiles": [
+    {"path": "content/projects/dotfiles-manager.mdx", "language": "markdown", "sizeLines": 29, "fileCategory": "docs"},
+    {"path": "content/projects/fzf-scripts.mdx", "language": "markdown", "sizeLines": 31, "fileCategory": "docs"},
+    {"path": "content/projects/neovim-config.mdx", "language": "markdown", "sizeLines": 34, "fileCategory": "docs"}
+  ],
+  "batchImportData": {
+    "content/projects/dotfiles-manager.mdx": [],
+    "content/projects/fzf-scripts.mdx": [],
+    "content/projects/neovim-config.mdx": []
+  }
+}

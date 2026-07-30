@@ -1,0 +1,106 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "This is a Next.js portfolio website featuring a personal blog, project showcase, and interactive terminal. The README explains how to get started with development and the project's core technologies.",
+    "nodeIds": [
+      "document:README.md"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "App Layout & Providers",
+    "description": "The root layout wraps the entire application with theme, settings, and toast providers. It sets up the HTML structure, fonts, and global styles. This is the entry point for understanding how the app composes its UI.",
+    "nodeIds": [
+      "file:app/layout.tsx",
+      "file:app/providers.tsx"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Context Providers",
+    "description": "Three context providers manage global state: ThemeContext for dark/light mode, SettingsContext for user preferences, and ToastContext for notifications. These contexts power the interactive features seen throughout the site.",
+    "nodeIds": [
+      "file:context/ThemeContext.tsx",
+      "file:context/SettingsContext.tsx",
+      "file:context/ToastContext.tsx"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Core UI Components",
+    "description": "The components directory contains reusable UI elements: AppHeader for navigation, AppFooter for site links, ContactModal for reaching out, and Popup for notifications. These form the visual foundation of the portfolio.",
+    "nodeIds": [
+      "file:components/AppHeader.tsx",
+      "file:components/AppFooter.tsx",
+      "file:components/ContactModal.tsx",
+      "file:components/Popup.tsx"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "Blog System",
+    "description": "The blog uses MDX for content authoring with frontmatter for metadata. BlogGrid displays posts with search filtering, while the dynamic [slug] page renders individual posts with syntax highlighting and table of contents.",
+    "nodeIds": [
+      "file:app/blog/page.tsx",
+      "file:app/blog/BlogGrid.tsx",
+      "file:app/blog/[slug]/page.tsx"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "Projects Showcase",
+    "description": "Projects follow a similar pattern to the blog: a grid view with search and a detail page that fetches README content from GitHub. This demonstrates the site's data fetching strategy and content rendering approach.",
+    "nodeIds": [
+      "file:app/projects/page.tsx",
+      "file:app/projects/ProjectGrid.tsx",
+      "file:app/projects/[slug]/page.tsx"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "Content Management",
+    "description": "The content module reads MDX files from disk, parses frontmatter, and provides functions to fetch blog posts, projects, and about content. This is the data layer that feeds the blog and project pages.",
+    "nodeIds": [
+      "file:lib/content.ts",
+      "file:lib/schema.ts"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "Search & Filtering",
+    "description": "Search functionality spans multiple files: SearchBar provides the input, useKeyboard handles shortcuts, and utils.ts implements query parsing and card filtering. This powers the real-time search across blog posts and projects.",
+    "nodeIds": [
+      "file:components/SearchBar.tsx",
+      "file:hooks/useKeyboard.ts",
+      "file:lib/utils.ts"
+    ]
+  },
+  {
+    "order": 9,
+    "title": "GitHub Integration",
+    "description": "The GitHub module uses Octokit to fetch user profile data and repository information. This powers the projects page which displays repos with their descriptions, languages, and star counts.",
+    "nodeIds": [
+      "file:lib/github.ts",
+      "file:lib/api.ts"
+    ]
+  },
+  {
+    "order": 10,
+    "title": "Configuration & Build",
+    "description": "Package.json defines dependencies and scripts, tsconfig.json configures TypeScript compilation, and tailwind.config.ts sets up the design system. These files control how the project builds and runs.",
+    "nodeIds": [
+      "file:package.json",
+      "file:tsconfig.json",
+      "file:tailwind.config.ts"
+    ]
+  },
+  {
+    "order": 11,
+    "title": "CI/CD Pipeline",
+    "description": "The GitHub Actions workflow runs quality checks on every push and pull request. It installs dependencies, runs linting, type checking, and tests to ensure code quality before deployment.",
+    "nodeIds": [
+      "file:.github/workflows/ci.yml"
+    ]
+  }
+]

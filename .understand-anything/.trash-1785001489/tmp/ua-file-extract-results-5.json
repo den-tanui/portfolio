@@ -1,0 +1,1569 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "app/admin/AdminClient.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 792,
+      "nonEmptyLines": 729,
+      "functions": [
+        {
+          "name": "PostForm",
+          "startLine": 68,
+          "endLine": 148,
+          "params": [
+            "{\n  data,\n  onChange,\n}"
+          ]
+        },
+        {
+          "name": "ProjectForm",
+          "startLine": 150,
+          "endLine": 255,
+          "params": [
+            "{\n  data,\n  onChange,\n}"
+          ]
+        },
+        {
+          "name": "slugify",
+          "startLine": 259,
+          "endLine": 261,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "StatusBanner",
+          "startLine": 265,
+          "endLine": 278,
+          "params": [
+            "{ msg, type }"
+          ]
+        },
+        {
+          "name": "ConfirmDialog",
+          "startLine": 282,
+          "endLine": 310,
+          "params": [
+            "{\n  message,\n  onConfirm,\n  onCancel,\n}"
+          ]
+        },
+        {
+          "name": "AdminClient",
+          "startLine": 314,
+          "endLine": 792,
+          "params": [
+            "{\n  posts: initialPosts,\n  projects: initialProjects,\n  authMode,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AdminClient",
+          "line": 314,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "set",
+          "callee": "onChange",
+          "lineNumber": 76
+        },
+        {
+          "caller": "PostForm",
+          "callee": "set",
+          "lineNumber": 86
+        },
+        {
+          "caller": "PostForm",
+          "callee": "slugify",
+          "lineNumber": 87
+        },
+        {
+          "caller": "PostForm",
+          "callee": "set",
+          "lineNumber": 88
+        },
+        {
+          "caller": "PostForm",
+          "callee": "slugify",
+          "lineNumber": 88
+        },
+        {
+          "caller": "PostForm",
+          "callee": "set",
+          "lineNumber": 99
+        },
+        {
+          "caller": "PostForm",
+          "callee": "set",
+          "lineNumber": 107
+        },
+        {
+          "caller": "PostForm",
+          "callee": "set",
+          "lineNumber": 117
+        },
+        {
+          "caller": "PostForm",
+          "callee": "set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "PostForm",
+          "callee": "set",
+          "lineNumber": 133
+        },
+        {
+          "caller": "PostForm",
+          "callee": "set",
+          "lineNumber": 143
+        },
+        {
+          "caller": "set",
+          "callee": "onChange",
+          "lineNumber": 158
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 168
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "slugify",
+          "lineNumber": 169
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 170
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "slugify",
+          "lineNumber": 170
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 181
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 190
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "Number",
+          "lineNumber": 190
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 199
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 207
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 216
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 224
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 232
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 240
+        },
+        {
+          "caller": "ProjectForm",
+          "callee": "set",
+          "lineNumber": 250
+        },
+        {
+          "caller": "slugify",
+          "callee": "s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace",
+          "lineNumber": 260
+        },
+        {
+          "caller": "slugify",
+          "callee": "s.toLowerCase().replace",
+          "lineNumber": 260
+        },
+        {
+          "caller": "slugify",
+          "callee": "s.toLowerCase",
+          "lineNumber": 260
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 323
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 324
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 325
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 326
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 329
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 330
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 331
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 334
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 337
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useState",
+          "lineNumber": 343
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useCallback",
+          "lineNumber": 351
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setStatus",
+          "lineNumber": 352
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setTimeout",
+          "lineNumber": 353
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setStatus",
+          "lineNumber": 353
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "useCallback",
+          "lineNumber": 358
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "window.location.reload",
+          "lineNumber": 359
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "getToken",
+          "lineNumber": 365
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "safeSlug",
+          "lineNumber": 368
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "data.tags.split(',').map((t) => t.trim()).filter",
+          "lineNumber": 369
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "data.tags.split(',').map",
+          "lineNumber": 369
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "data.tags.split",
+          "lineNumber": 369
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "t.trim",
+          "lineNumber": 369
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "buildFrontmatter",
+          "lineNumber": 371
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "deleteFileFromRepo",
+          "lineNumber": 384
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "upsertFile",
+          "lineNumber": 387
+        },
+        {
+          "caller": "oauthPost",
+          "callee": "triggerDeploy",
+          "lineNumber": 391
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "getToken",
+          "lineNumber": 395
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "safeSlug",
+          "lineNumber": 398
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "data.tags.split(',').map((t) => t.trim()).filter",
+          "lineNumber": 399
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "data.tags.split(',').map",
+          "lineNumber": 399
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "data.tags.split",
+          "lineNumber": 399
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "t.trim",
+          "lineNumber": 399
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "data.languages.split(',').map((l) => l.trim()).filter",
+          "lineNumber": 400
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "data.languages.split(',').map",
+          "lineNumber": 400
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "data.languages.split",
+          "lineNumber": 400
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "l.trim",
+          "lineNumber": 400
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "buildFrontmatter",
+          "lineNumber": 415
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "deleteFileFromRepo",
+          "lineNumber": 419
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "upsertFile",
+          "lineNumber": 422
+        },
+        {
+          "caller": "oauthProject",
+          "callee": "triggerDeploy",
+          "lineNumber": 430
+        },
+        {
+          "caller": "openNewPost",
+          "callee": "setPostForm",
+          "lineNumber": 436
+        },
+        {
+          "caller": "openNewPost",
+          "callee": "setFormMode",
+          "lineNumber": 437
+        },
+        {
+          "caller": "openNewPost",
+          "callee": "setEditingSlug",
+          "lineNumber": 438
+        },
+        {
+          "caller": "openNewPost",
+          "callee": "setFormOpen",
+          "lineNumber": 439
+        },
+        {
+          "caller": "openEditPost",
+          "callee": "setPostForm",
+          "lineNumber": 443
+        },
+        {
+          "caller": "openEditPost",
+          "callee": "p.tags.join",
+          "lineNumber": 446
+        },
+        {
+          "caller": "openEditPost",
+          "callee": "setFormMode",
+          "lineNumber": 452
+        },
+        {
+          "caller": "openEditPost",
+          "callee": "setEditingSlug",
+          "lineNumber": 453
+        },
+        {
+          "caller": "openEditPost",
+          "callee": "setFormOpen",
+          "lineNumber": 454
+        },
+        {
+          "caller": "savePost",
+          "callee": "postForm.title.trim",
+          "lineNumber": 458
+        },
+        {
+          "caller": "savePost",
+          "callee": "showStatus",
+          "lineNumber": 459
+        },
+        {
+          "caller": "savePost",
+          "callee": "oauthPost",
+          "lineNumber": 464
+        },
+        {
+          "caller": "savePost",
+          "callee": "serverActions.createPost",
+          "lineNumber": 467
+        },
+        {
+          "caller": "savePost",
+          "callee": "serverActions.updatePost",
+          "lineNumber": 469
+        },
+        {
+          "caller": "savePost",
+          "callee": "showStatus",
+          "lineNumber": 472
+        },
+        {
+          "caller": "savePost",
+          "callee": "setFormOpen",
+          "lineNumber": 473
+        },
+        {
+          "caller": "savePost",
+          "callee": "refresh",
+          "lineNumber": 474
+        },
+        {
+          "caller": "savePost",
+          "callee": "showStatus",
+          "lineNumber": 476
+        },
+        {
+          "caller": "confirmDeletePost",
+          "callee": "getToken",
+          "lineNumber": 484
+        },
+        {
+          "caller": "confirmDeletePost",
+          "callee": "deleteFileFromRepo",
+          "lineNumber": 486
+        },
+        {
+          "caller": "confirmDeletePost",
+          "callee": "triggerDeploy",
+          "lineNumber": 491
+        },
+        {
+          "caller": "confirmDeletePost",
+          "callee": "serverActions.deletePost",
+          "lineNumber": 493
+        },
+        {
+          "caller": "confirmDeletePost",
+          "callee": "setDeleteTarget",
+          "lineNumber": 495
+        },
+        {
+          "caller": "confirmDeletePost",
+          "callee": "showStatus",
+          "lineNumber": 496
+        },
+        {
+          "caller": "confirmDeletePost",
+          "callee": "refresh",
+          "lineNumber": 497
+        },
+        {
+          "caller": "confirmDeletePost",
+          "callee": "showStatus",
+          "lineNumber": 499
+        },
+        {
+          "caller": "openNewProject",
+          "callee": "setProjectForm",
+          "lineNumber": 506
+        },
+        {
+          "caller": "openNewProject",
+          "callee": "setFormMode",
+          "lineNumber": 507
+        },
+        {
+          "caller": "openNewProject",
+          "callee": "setEditingSlug",
+          "lineNumber": 508
+        },
+        {
+          "caller": "openNewProject",
+          "callee": "setFormOpen",
+          "lineNumber": 509
+        },
+        {
+          "caller": "openEditProject",
+          "callee": "setProjectForm",
+          "lineNumber": 513
+        },
+        {
+          "caller": "openEditProject",
+          "callee": "p.tags.join",
+          "lineNumber": 516
+        },
+        {
+          "caller": "openEditProject",
+          "callee": "p.languages.join",
+          "lineNumber": 517
+        },
+        {
+          "caller": "openEditProject",
+          "callee": "setFormMode",
+          "lineNumber": 525
+        },
+        {
+          "caller": "openEditProject",
+          "callee": "setEditingSlug",
+          "lineNumber": 526
+        },
+        {
+          "caller": "openEditProject",
+          "callee": "setFormOpen",
+          "lineNumber": 527
+        },
+        {
+          "caller": "saveProject",
+          "callee": "projectForm.title.trim",
+          "lineNumber": 531
+        },
+        {
+          "caller": "saveProject",
+          "callee": "showStatus",
+          "lineNumber": 532
+        },
+        {
+          "caller": "saveProject",
+          "callee": "oauthProject",
+          "lineNumber": 537
+        },
+        {
+          "caller": "saveProject",
+          "callee": "serverActions.createProject",
+          "lineNumber": 540
+        },
+        {
+          "caller": "saveProject",
+          "callee": "serverActions.updateProject",
+          "lineNumber": 542
+        },
+        {
+          "caller": "saveProject",
+          "callee": "showStatus",
+          "lineNumber": 545
+        },
+        {
+          "caller": "saveProject",
+          "callee": "setFormOpen",
+          "lineNumber": 549
+        },
+        {
+          "caller": "saveProject",
+          "callee": "refresh",
+          "lineNumber": 550
+        },
+        {
+          "caller": "saveProject",
+          "callee": "showStatus",
+          "lineNumber": 552
+        },
+        {
+          "caller": "confirmDeleteProject",
+          "callee": "getToken",
+          "lineNumber": 560
+        },
+        {
+          "caller": "confirmDeleteProject",
+          "callee": "deleteFileFromRepo",
+          "lineNumber": 562
+        },
+        {
+          "caller": "confirmDeleteProject",
+          "callee": "triggerDeploy",
+          "lineNumber": 567
+        },
+        {
+          "caller": "confirmDeleteProject",
+          "callee": "serverActions.deleteProject",
+          "lineNumber": 569
+        },
+        {
+          "caller": "confirmDeleteProject",
+          "callee": "setDeleteTarget",
+          "lineNumber": 571
+        },
+        {
+          "caller": "confirmDeleteProject",
+          "callee": "showStatus",
+          "lineNumber": 572
+        },
+        {
+          "caller": "confirmDeleteProject",
+          "callee": "refresh",
+          "lineNumber": 573
+        },
+        {
+          "caller": "confirmDeleteProject",
+          "callee": "showStatus",
+          "lineNumber": 575
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "(['posts', 'projects'] as const).map",
+          "lineNumber": 597
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setTab",
+          "lineNumber": 600
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "t.toUpperCase",
+          "lineNumber": 608
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "signOut",
+          "lineNumber": 618
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 627
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "sessionStorage.removeItem",
+          "lineNumber": 628
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "posts.map",
+          "lineNumber": 642
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "openEditPost",
+          "lineNumber": 660
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setDeleteTarget",
+          "lineNumber": 666
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "projects.map",
+          "lineNumber": 691
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "p.tags.slice(0, 3).join",
+          "lineNumber": 707
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "p.tags.slice",
+          "lineNumber": 707
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "openEditProject",
+          "lineNumber": 713
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setDeleteTarget",
+          "lineNumber": 720
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setFormOpen",
+          "lineNumber": 744
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setFormOpen",
+          "lineNumber": 750
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setProjectForm",
+          "lineNumber": 762
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setFormOpen",
+          "lineNumber": 768
+        },
+        {
+          "caller": "AdminClient",
+          "callee": "setDeleteTarget",
+          "lineNumber": 787
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/admin-actions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 252,
+      "nonEmptyLines": 215,
+      "functions": [
+        {
+          "name": "safeSlug",
+          "startLine": 32,
+          "endLine": 39,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "buildFrontmatter",
+          "startLine": 41,
+          "endLine": 59,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "createPost",
+          "startLine": 63,
+          "endLine": 94,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "updatePost",
+          "startLine": 96,
+          "endLine": 137,
+          "params": [
+            "oldSlug",
+            "data"
+          ]
+        },
+        {
+          "name": "deletePost",
+          "startLine": 139,
+          "endLine": 153,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "createProject",
+          "startLine": 157,
+          "endLine": 191,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "updateProject",
+          "startLine": 193,
+          "endLine": 236,
+          "params": [
+            "oldSlug",
+            "data"
+          ]
+        },
+        {
+          "name": "deleteProject",
+          "startLine": 238,
+          "endLine": 252,
+          "params": [
+            "slug"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createPost",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "updatePost",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "deletePost",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "createProject",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "updateProject",
+          "line": 193,
+          "isDefault": false
+        },
+        {
+          "name": "deleteProject",
+          "line": 238,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "safeSlug",
+          "callee": "s\n      .toLowerCase()\n      .replace(/[^a-z0-9]+/g, '-')\n      .replace",
+          "lineNumber": 34
+        },
+        {
+          "caller": "safeSlug",
+          "callee": "s\n      .toLowerCase()\n      .replace",
+          "lineNumber": 34
+        },
+        {
+          "caller": "safeSlug",
+          "callee": "s\n      .toLowerCase",
+          "lineNumber": 34
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "Object.entries",
+          "lineNumber": 43
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 46
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "value.replace",
+          "lineNumber": 46
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 48
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 50
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "Array.isArray",
+          "lineNumber": 51
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "value.map((v) => (typeof v === 'string' ? `\"${v}\"` : v)).join",
+          "lineNumber": 53
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "value.map",
+          "lineNumber": 53
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 57
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.join",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createPost",
+          "callee": "safeSlug",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createPost",
+          "callee": "data.tags.split(',').map((t) => t.trim()).filter",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createPost",
+          "callee": "data.tags.split(',').map",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createPost",
+          "callee": "data.tags.split",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createPost",
+          "callee": "t.trim",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createPost",
+          "callee": "buildFrontmatter",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createPost",
+          "callee": "upsertFile",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createPost",
+          "callee": "triggerDeploy",
+          "lineNumber": 90
+        },
+        {
+          "caller": "createPost",
+          "callee": "revalidatePath",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createPost",
+          "callee": "revalidatePath",
+          "lineNumber": 92
+        },
+        {
+          "caller": "updatePost",
+          "callee": "safeSlug",
+          "lineNumber": 97
+        },
+        {
+          "caller": "updatePost",
+          "callee": "data.tags.split(',').map((t) => t.trim()).filter",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updatePost",
+          "callee": "data.tags.split(',').map",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updatePost",
+          "callee": "data.tags.split",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updatePost",
+          "callee": "t.trim",
+          "lineNumber": 98
+        },
+        {
+          "caller": "updatePost",
+          "callee": "buildFrontmatter",
+          "lineNumber": 102
+        },
+        {
+          "caller": "updatePost",
+          "callee": "deleteFileFromRepo",
+          "lineNumber": 116
+        },
+        {
+          "caller": "updatePost",
+          "callee": "upsertFile",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updatePost",
+          "callee": "triggerDeploy",
+          "lineNumber": 132
+        },
+        {
+          "caller": "updatePost",
+          "callee": "revalidatePath",
+          "lineNumber": 133
+        },
+        {
+          "caller": "updatePost",
+          "callee": "revalidatePath",
+          "lineNumber": 134
+        },
+        {
+          "caller": "updatePost",
+          "callee": "revalidatePath",
+          "lineNumber": 135
+        },
+        {
+          "caller": "deletePost",
+          "callee": "deleteFileFromRepo",
+          "lineNumber": 143
+        },
+        {
+          "caller": "deletePost",
+          "callee": "triggerDeploy",
+          "lineNumber": 149
+        },
+        {
+          "caller": "deletePost",
+          "callee": "revalidatePath",
+          "lineNumber": 150
+        },
+        {
+          "caller": "deletePost",
+          "callee": "revalidatePath",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createProject",
+          "callee": "safeSlug",
+          "lineNumber": 158
+        },
+        {
+          "caller": "createProject",
+          "callee": "data.tags.split(',').map((t) => t.trim()).filter",
+          "lineNumber": 159
+        },
+        {
+          "caller": "createProject",
+          "callee": "data.tags.split(',').map",
+          "lineNumber": 159
+        },
+        {
+          "caller": "createProject",
+          "callee": "data.tags.split",
+          "lineNumber": 159
+        },
+        {
+          "caller": "createProject",
+          "callee": "t.trim",
+          "lineNumber": 159
+        },
+        {
+          "caller": "createProject",
+          "callee": "data.languages.split(',').map((l) => l.trim()).filter",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createProject",
+          "callee": "data.languages.split(',').map",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createProject",
+          "callee": "data.languages.split",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createProject",
+          "callee": "l.trim",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createProject",
+          "callee": "buildFrontmatter",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createProject",
+          "callee": "upsertFile",
+          "lineNumber": 178
+        },
+        {
+          "caller": "createProject",
+          "callee": "triggerDeploy",
+          "lineNumber": 187
+        },
+        {
+          "caller": "createProject",
+          "callee": "revalidatePath",
+          "lineNumber": 188
+        },
+        {
+          "caller": "createProject",
+          "callee": "revalidatePath",
+          "lineNumber": 189
+        },
+        {
+          "caller": "updateProject",
+          "callee": "safeSlug",
+          "lineNumber": 194
+        },
+        {
+          "caller": "updateProject",
+          "callee": "data.tags.split(',').map((t) => t.trim()).filter",
+          "lineNumber": 195
+        },
+        {
+          "caller": "updateProject",
+          "callee": "data.tags.split(',').map",
+          "lineNumber": 195
+        },
+        {
+          "caller": "updateProject",
+          "callee": "data.tags.split",
+          "lineNumber": 195
+        },
+        {
+          "caller": "updateProject",
+          "callee": "t.trim",
+          "lineNumber": 195
+        },
+        {
+          "caller": "updateProject",
+          "callee": "data.languages.split(',').map((l) => l.trim()).filter",
+          "lineNumber": 196
+        },
+        {
+          "caller": "updateProject",
+          "callee": "data.languages.split(',').map",
+          "lineNumber": 196
+        },
+        {
+          "caller": "updateProject",
+          "callee": "data.languages.split",
+          "lineNumber": 196
+        },
+        {
+          "caller": "updateProject",
+          "callee": "l.trim",
+          "lineNumber": 196
+        },
+        {
+          "caller": "updateProject",
+          "callee": "buildFrontmatter",
+          "lineNumber": 200
+        },
+        {
+          "caller": "updateProject",
+          "callee": "deleteFileFromRepo",
+          "lineNumber": 215
+        },
+        {
+          "caller": "updateProject",
+          "callee": "upsertFile",
+          "lineNumber": 222
+        },
+        {
+          "caller": "updateProject",
+          "callee": "triggerDeploy",
+          "lineNumber": 231
+        },
+        {
+          "caller": "updateProject",
+          "callee": "revalidatePath",
+          "lineNumber": 232
+        },
+        {
+          "caller": "updateProject",
+          "callee": "revalidatePath",
+          "lineNumber": 233
+        },
+        {
+          "caller": "updateProject",
+          "callee": "revalidatePath",
+          "lineNumber": 234
+        },
+        {
+          "caller": "deleteProject",
+          "callee": "deleteFileFromRepo",
+          "lineNumber": 242
+        },
+        {
+          "caller": "deleteProject",
+          "callee": "triggerDeploy",
+          "lineNumber": 248
+        },
+        {
+          "caller": "deleteProject",
+          "callee": "revalidatePath",
+          "lineNumber": 249
+        },
+        {
+          "caller": "deleteProject",
+          "callee": "revalidatePath",
+          "lineNumber": 250
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/admin-shared.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "safeSlug",
+          "startLine": 6,
+          "endLine": 13,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "buildFrontmatter",
+          "startLine": 15,
+          "endLine": 33,
+          "params": [
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "safeSlug",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "buildFrontmatter",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "safeSlug",
+          "callee": "s\n      .toLowerCase()\n      .replace(/[^a-z0-9]+/g, '-')\n      .replace",
+          "lineNumber": 8
+        },
+        {
+          "caller": "safeSlug",
+          "callee": "s\n      .toLowerCase()\n      .replace",
+          "lineNumber": 8
+        },
+        {
+          "caller": "safeSlug",
+          "callee": "s\n      .toLowerCase",
+          "lineNumber": 8
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "Object.entries",
+          "lineNumber": 17
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 20
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "value.replace",
+          "lineNumber": 20
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 22
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 24
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "Array.isArray",
+          "lineNumber": 25
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 26
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "value.map((v) => (typeof v === 'string' ? `\"${v}\"` : v)).join",
+          "lineNumber": 27
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "value.map",
+          "lineNumber": 27
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.push",
+          "lineNumber": 31
+        },
+        {
+          "caller": "buildFrontmatter",
+          "callee": "lines.join",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "lib/github-client.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "getRepo",
+          "startLine": 16,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "getToken",
+          "startLine": 29,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "getFileMeta",
+          "startLine": 36,
+          "endLine": 50,
+          "params": [
+            "path",
+            "token"
+          ]
+        },
+        {
+          "name": "upsertFile",
+          "startLine": 52,
+          "endLine": 78,
+          "params": [
+            "file",
+            "token"
+          ]
+        },
+        {
+          "name": "deleteFileFromRepo",
+          "startLine": 80,
+          "endLine": 101,
+          "params": [
+            "path",
+            "message",
+            "token"
+          ]
+        },
+        {
+          "name": "triggerDeploy",
+          "startLine": 103,
+          "endLine": 107,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getToken",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "getFileMeta",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "upsertFile",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "deleteFileFromRepo",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "triggerDeploy",
+          "line": 103,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getToken",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getFileMeta",
+          "callee": "fetch",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getFileMeta",
+          "callee": "getRepo",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getFileMeta",
+          "callee": "res.json",
+          "lineNumber": 48
+        },
+        {
+          "caller": "upsertFile",
+          "callee": "getFileMeta",
+          "lineNumber": 56
+        },
+        {
+          "caller": "upsertFile",
+          "callee": "btoa",
+          "lineNumber": 59
+        },
+        {
+          "caller": "upsertFile",
+          "callee": "fetch",
+          "lineNumber": 64
+        },
+        {
+          "caller": "upsertFile",
+          "callee": "getRepo",
+          "lineNumber": 64
+        },
+        {
+          "caller": "upsertFile",
+          "callee": "JSON.stringify",
+          "lineNumber": 71
+        },
+        {
+          "caller": "upsertFile",
+          "callee": "res.json().catch",
+          "lineNumber": 74
+        },
+        {
+          "caller": "upsertFile",
+          "callee": "res.json",
+          "lineNumber": 74
+        },
+        {
+          "caller": "deleteFileFromRepo",
+          "callee": "getFileMeta",
+          "lineNumber": 85
+        },
+        {
+          "caller": "deleteFileFromRepo",
+          "callee": "fetch",
+          "lineNumber": 87
+        },
+        {
+          "caller": "deleteFileFromRepo",
+          "callee": "getRepo",
+          "lineNumber": 87
+        },
+        {
+          "caller": "deleteFileFromRepo",
+          "callee": "JSON.stringify",
+          "lineNumber": 94
+        },
+        {
+          "caller": "deleteFileFromRepo",
+          "callee": "res.json().catch",
+          "lineNumber": 97
+        },
+        {
+          "caller": "deleteFileFromRepo",
+          "callee": "res.json",
+          "lineNumber": 97
+        },
+        {
+          "caller": "triggerDeploy",
+          "callee": "fetch(hook, { method: 'POST' }).catch",
+          "lineNumber": 106
+        },
+        {
+          "caller": "triggerDeploy",
+          "callee": "fetch",
+          "lineNumber": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    }
+  ]
+}

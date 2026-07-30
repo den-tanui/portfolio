@@ -4,13 +4,6 @@ import { useState, useCallback } from 'react'
 import { signOut } from 'next-auth/react'
 import type { BlogPost, Project } from '@/lib/content'
 import * as serverActions from '@/lib/admin-actions'
-import {
-  upsertFile,
-  deleteFileFromRepo,
-  triggerDeploy,
-  getToken,
-} from '@/lib/github-client'
-import { buildFrontmatter, safeSlug, type PostForm, type ProjectForm } from '@/lib/admin-shared'
 import TerminalPrompt from '@/components/TerminalPrompt'
 import Popup from '@/components/Popup'
 
@@ -314,11 +307,9 @@ function ConfirmDialog({
 export default function AdminClient({
   posts: initialPosts,
   projects: initialProjects,
-  authMode,
 }: {
   posts: BlogPost[]
   projects: Project[]
-  authMode: string
 }) {
   const [tab, setTab] = useState<Tab>('posts')
   const [posts, setPosts] = useState(initialPosts)
@@ -353,83 +344,6 @@ export default function AdminClient({
     setTimeout(() => setStatus(null), 4000)
   }, [])
 
-  const isOauth = authMode === 'oauth'
-
-  const refresh = useCallback(() => {
-    window.location.reload()
-  }, [])
-
-  /* ───── GitHub client helper (oauth mode) ───── */
-
-  const oauthPost = async (data: PostForm, oldSlug?: string) => {
-    const token = getToken()
-    if (!token) throw new Error('Not authenticated. Please re-login.')
-
-    const slug = safeSlug(data.slug || data.title)
-    const tags = data.tags.split(',').map((t) => t.trim()).filter(Boolean)
-
-    const frontmatter = buildFrontmatter({
-      title: data.title,
-      slug,
-      tags,
-      description: data.description,
-      image: data.image || '/images/blog/placeholder.jpg',
-      featured: data.featured,
-      author: 'den-tanui',
-    })
-
-    const mdx = `${frontmatter}\n\n${data.content || ''}`
-
-    if (oldSlug && oldSlug !== slug) {
-      await deleteFileFromRepo(`content/blog/${oldSlug}.md`, `Remove: ${oldSlug}`, token)
-    }
-
-    await upsertFile(
-      { path: `content/blog/${slug}.md`, content: mdx, message: `Update post: ${data.title}` },
-      token,
-    )
-    await triggerDeploy()
-  }
-
-  const oauthProject = async (data: ProjectForm & { repo_url?: string }, oldSlug?: string) => {
-    const token = getToken()
-    if (!token) throw new Error('Not authenticated. Please re-login.')
-
-    const slug = safeSlug(data.slug || data.title)
-    const tags = data.tags.split(',').map((t) => t.trim()).filter(Boolean)
-    const languages = data.languages.split(',').map((l) => l.trim()).filter(Boolean)
-
-    const frontmatterData: Record<string, unknown> = {
-      title: data.title,
-      slug,
-      tags,
-      languages,
-      description: data.description,
-      image: data.image || '/images/projects/placeholder.jpg',
-      stars: data.stars || 0,
-      featured: data.featured,
-      author: 'den-tanui',
-    }
-    if (data.repo_url) frontmatterData.repo_url = data.repo_url
-
-    const frontmatter = buildFrontmatter(frontmatterData)
-    const mdx = `${frontmatter}\n\n${data.content || ''}`
-
-    if (oldSlug && oldSlug !== slug) {
-      await deleteFileFromRepo(`content/projects/${oldSlug}.md`, `Remove: ${oldSlug}`, token)
-    }
-
-    await upsertFile(
-      {
-        path: `content/projects/${slug}.md`,
-        content: mdx,
-        message: `Update project: ${data.title}`,
-      },
-      token,
-    )
-    await triggerDeploy()
-  }
-
   /* ───── post handlers ───── */
 
   const openNewPost = () => {
@@ -460,18 +374,14 @@ export default function AdminClient({
       return
     }
     try {
-      if (isOauth) {
-        await oauthPost(postForm, formMode === 'edit' ? editingSlug! : undefined)
+      if (formMode === 'create') {
+        await serverActions.createPost(postForm)
       } else {
-        if (formMode === 'create') {
-          await serverActions.createPost(postForm)
-        } else {
-          await serverActions.updatePost(editingSlug!, postForm)
-        }
+        await serverActions.updatePost(editingSlug!, postForm)
       }
       showStatus(`Post "${postForm.title}" ${formMode === 'create' ? 'created' : 'updated'}`, 'ok')
       setFormOpen(false)
-      refresh()
+      window.location.reload()
     } catch (e) {
       showStatus(`Failed: ${e instanceof Error ? e.message : 'Unknown error'}`, 'error')
     }
@@ -480,21 +390,10 @@ export default function AdminClient({
   const confirmDeletePost = async () => {
     if (!deleteTarget) return
     try {
-      if (isOauth) {
-        const token = getToken()
-        if (!token) throw new Error('Not authenticated')
-        await deleteFileFromRepo(
-          `content/blog/${deleteTarget.slug}.md`,
-          `Delete post: ${deleteTarget.slug}`,
-          token,
-        )
-        await triggerDeploy()
-      } else {
-        await serverActions.deletePost(deleteTarget.slug)
-      }
+      await serverActions.deletePost(deleteTarget.slug)
       setDeleteTarget(null)
       showStatus('Post deleted', 'ok')
-      refresh()
+      window.location.reload()
     } catch (e) {
       showStatus(`Failed to delete: ${e instanceof Error ? e.message : 'Unknown error'}`, 'error')
     }
@@ -533,21 +432,17 @@ export default function AdminClient({
       return
     }
     try {
-      if (isOauth) {
-        await oauthProject(projectForm, formMode === 'edit' ? editingSlug! : undefined)
+      if (formMode === 'create') {
+        await serverActions.createProject(projectForm)
       } else {
-        if (formMode === 'create') {
-          await serverActions.createProject(projectForm)
-        } else {
-          await serverActions.updateProject(editingSlug!, projectForm)
-        }
+        await serverActions.updateProject(editingSlug!, projectForm)
       }
       showStatus(
         `Project "${projectForm.title}" ${formMode === 'create' ? 'created' : 'updated'}`,
         'ok',
       )
       setFormOpen(false)
-      refresh()
+      window.location.reload()
     } catch (e) {
       showStatus(`Failed: ${e instanceof Error ? e.message : 'Unknown error'}`, 'error')
     }
@@ -556,21 +451,10 @@ export default function AdminClient({
   const confirmDeleteProject = async () => {
     if (!deleteTarget) return
     try {
-      if (isOauth) {
-        const token = getToken()
-        if (!token) throw new Error('Not authenticated')
-        await deleteFileFromRepo(
-          `content/projects/${deleteTarget.slug}.md`,
-          `Delete project: ${deleteTarget.slug}`,
-          token,
-        )
-        await triggerDeploy()
-      } else {
-        await serverActions.deleteProject(deleteTarget.slug)
-      }
+      await serverActions.deleteProject(deleteTarget.slug)
       setDeleteTarget(null)
       showStatus('Project deleted', 'ok')
-      refresh()
+      window.location.reload()
     } catch (e) {
       showStatus(`Failed to delete: ${e instanceof Error ? e.message : 'Unknown error'}`, 'error')
     }
@@ -612,27 +496,12 @@ export default function AdminClient({
             </button>
           ))}
           <div className="flex-1" />
-          {/* Logout — cookie mode only */}
-          {!isOauth && (
-            <button
-              onClick={() => signOut({ callbackUrl: '/admin/login' })}
-              className="px-2 py-1 text-[10px] text-on-surface-muted hover:text-error transition-colors"
-            >
-              logout
-            </button>
-          )}
-          {isOauth && (
-            <button
-              onClick={() => {
-                sessionStorage.removeItem('github_token')
-                sessionStorage.removeItem('github_token_expires')
-                window.location.href = '/admin/login'
-              }}
-              className="px-2 py-1 text-[10px] text-on-surface-muted hover:text-error transition-colors"
-            >
-              logout
-            </button>
-          )}
+          <button
+            onClick={() => signOut({ callbackUrl: '/admin/login' })}
+            className="px-2 py-1 text-[10px] text-on-surface-muted hover:text-error transition-colors"
+          >
+            logout
+          </button>
         </div>
 
         {/* ── Posts Listing ── */}
@@ -732,7 +601,7 @@ export default function AdminClient({
             </div>
             <button
               onClick={openNewProject}
-              className="mt-4 px-3 py-1.5 text-xs rounded bg-primary text-on-primary font-bold hover:opacity-90 transition-colors"
+              className="mt-4 px-3 py-1.5 text-xs rounded bg-primary text-on-primary font-bold hover:opacity-90 transition-opacity"
             >
               + new project
             </button>

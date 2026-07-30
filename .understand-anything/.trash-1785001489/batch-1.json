@@ -1,0 +1,928 @@
+{
+  "nodes": [
+    {
+      "id": "file:app/layout.tsx",
+      "type": "file",
+      "name": "layout.tsx",
+      "filePath": "app/layout.tsx",
+      "summary": "Root layout component that wraps the entire Next.js application with providers and global styles.",
+      "tags": [
+        "entry-point",
+        "layout",
+        "provider"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:app/layout.tsx:RootLayout",
+      "type": "function",
+      "name": "RootLayout",
+      "filePath": "app/layout.tsx",
+      "summary": "Root layout function that renders HTML structure with metadata and child components.",
+      "tags": [
+        "layout",
+        "component"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        10,
+        37
+      ]
+    },
+    {
+      "id": "file:app/providers.tsx",
+      "type": "file",
+      "name": "providers.tsx",
+      "filePath": "app/providers.tsx",
+      "summary": "Provider wrapper component that composes theme, settings, toast, and keyboard providers for the app.",
+      "tags": [
+        "provider",
+        "composition",
+        "state-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:app/providers.tsx:Providers",
+      "type": "function",
+      "name": "Providers",
+      "filePath": "app/providers.tsx",
+      "summary": "Main providers component that wraps children with all context providers.",
+      "tags": [
+        "provider",
+        "composition"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        109,
+        121
+      ]
+    },
+    {
+      "id": "function:app/providers.tsx:AppShell",
+      "type": "function",
+      "name": "AppShell",
+      "filePath": "app/providers.tsx",
+      "summary": "Internal shell component handling navigation, theme toggling, keyboard shortcuts, and modal state.",
+      "tags": [
+        "shell",
+        "navigation",
+        "state-management"
+      ],
+      "complexity": "complex",
+      "lineRange": [
+        23,
+        107
+      ]
+    },
+    {
+      "id": "file:components/AppFooter.tsx",
+      "type": "file",
+      "name": "AppFooter.tsx",
+      "filePath": "components/AppFooter.tsx",
+      "summary": "Footer component displaying current time, breadcrumb navigation, and keyboard shortcut hints.",
+      "tags": [
+        "component",
+        "footer",
+        "navigation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/AppFooter.tsx:AppFooter",
+      "type": "function",
+      "name": "AppFooter",
+      "filePath": "components/AppFooter.tsx",
+      "summary": "Footer component with clock, breadcrumb, and navigation hints.",
+      "tags": [
+        "component",
+        "footer"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        40,
+        93
+      ]
+    },
+    {
+      "id": "file:components/AppHeader.tsx",
+      "type": "file",
+      "name": "AppHeader.tsx",
+      "filePath": "components/AppHeader.tsx",
+      "summary": "Header component with navigation links, theme toggle, and settings dropdown trigger.",
+      "tags": [
+        "component",
+        "header",
+        "navigation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/AppHeader.tsx:AppHeader",
+      "type": "function",
+      "name": "AppHeader",
+      "filePath": "components/AppHeader.tsx",
+      "summary": "Header component with nav items and theme/settings controls.",
+      "tags": [
+        "component",
+        "header"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        26,
+        94
+      ]
+    },
+    {
+      "id": "file:components/ContactModal.tsx",
+      "type": "file",
+      "name": "ContactModal.tsx",
+      "filePath": "components/ContactModal.tsx",
+      "summary": "Contact form modal with name, email, subject, and message fields.",
+      "tags": [
+        "component",
+        "modal",
+        "form"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/ContactModal.tsx:ContactModal",
+      "type": "function",
+      "name": "ContactModal",
+      "filePath": "components/ContactModal.tsx",
+      "summary": "Contact modal form component with submission handling.",
+      "tags": [
+        "component",
+        "modal",
+        "form"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        11,
+        97
+      ]
+    },
+    {
+      "id": "file:components/CvPicker.tsx",
+      "type": "file",
+      "name": "CvPicker.tsx",
+      "filePath": "components/CvPicker.tsx",
+      "summary": "CV download modal offering PDF and Markdown format options.",
+      "tags": [
+        "component",
+        "modal",
+        "download"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:components/CvPicker.tsx:CvPicker",
+      "type": "function",
+      "name": "CvPicker",
+      "filePath": "components/CvPicker.tsx",
+      "summary": "CV picker modal with format selection.",
+      "tags": [
+        "component",
+        "modal"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        16,
+        40
+      ]
+    },
+    {
+      "id": "file:components/HelpModal.tsx",
+      "type": "file",
+      "name": "HelpModal.tsx",
+      "filePath": "components/HelpModal.tsx",
+      "summary": "Help modal displaying keyboard shortcuts and navigation guide.",
+      "tags": [
+        "component",
+        "modal",
+        "help"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/HelpModal.tsx:HelpModal",
+      "type": "function",
+      "name": "HelpModal",
+      "filePath": "components/HelpModal.tsx",
+      "summary": "Help modal showing keyboard shortcuts.",
+      "tags": [
+        "component",
+        "modal"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        10,
+        80
+      ]
+    },
+    {
+      "id": "file:components/Popup.tsx",
+      "type": "file",
+      "name": "Popup.tsx",
+      "filePath": "components/Popup.tsx",
+      "summary": "Reusable modal popup component with backdrop click and Escape key dismissal.",
+      "tags": [
+        "component",
+        "modal",
+        "reusable"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/Popup.tsx:Popup",
+      "type": "function",
+      "name": "Popup",
+      "filePath": "components/Popup.tsx",
+      "summary": "Generic popup component with keyboard and backdrop dismiss.",
+      "tags": [
+        "component",
+        "modal"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        30,
+        63
+      ]
+    },
+    {
+      "id": "file:components/ReportModal.tsx",
+      "type": "file",
+      "name": "ReportModal.tsx",
+      "filePath": "components/ReportModal.tsx",
+      "summary": "Bug report modal with name, email, and description fields.",
+      "tags": [
+        "component",
+        "modal",
+        "form"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/ReportModal.tsx:ReportModal",
+      "type": "function",
+      "name": "ReportModal",
+      "filePath": "components/ReportModal.tsx",
+      "summary": "Report modal form component.",
+      "tags": [
+        "component",
+        "modal",
+        "form"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        11,
+        85
+      ]
+    },
+    {
+      "id": "file:components/SessionProvider.tsx",
+      "type": "file",
+      "name": "SessionProvider.tsx",
+      "filePath": "components/SessionProvider.tsx",
+      "summary": "NextAuth session provider wrapper component.",
+      "tags": [
+        "component",
+        "provider",
+        "auth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:components/SettingsDropdown.tsx",
+      "type": "file",
+      "name": "SettingsDropdown.tsx",
+      "filePath": "components/SettingsDropdown.tsx",
+      "summary": "Settings dropdown with theme toggle, font size, zoom controls, and action links.",
+      "tags": [
+        "component",
+        "settings",
+        "dropdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/SettingsDropdown.tsx:SettingsDropdown",
+      "type": "function",
+      "name": "SettingsDropdown",
+      "filePath": "components/SettingsDropdown.tsx",
+      "summary": "Settings dropdown with theme, font, and zoom controls.",
+      "tags": [
+        "component",
+        "settings"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        18,
+        124
+      ]
+    },
+    {
+      "id": "file:components/ToastContainer.tsx",
+      "type": "file",
+      "name": "ToastContainer.tsx",
+      "filePath": "components/ToastContainer.tsx",
+      "summary": "Toast notification container with animated toast items.",
+      "tags": [
+        "component",
+        "notification",
+        "toast"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/ToastContainer.tsx:ToastContainer",
+      "type": "function",
+      "name": "ToastContainer",
+      "filePath": "components/ToastContainer.tsx",
+      "summary": "Toast container rendering active notifications.",
+      "tags": [
+        "component",
+        "notification"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        63,
+        85
+      ]
+    },
+    {
+      "id": "file:context/SettingsContext.tsx",
+      "type": "file",
+      "name": "SettingsContext.tsx",
+      "filePath": "context/SettingsContext.tsx",
+      "summary": "React context providing font size and zoom settings with localStorage persistence.",
+      "tags": [
+        "context",
+        "settings",
+        "state-management"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:context/SettingsContext.tsx:SettingsProvider",
+      "type": "function",
+      "name": "SettingsProvider",
+      "filePath": "context/SettingsContext.tsx",
+      "summary": "Settings context provider with localStorage persistence.",
+      "tags": [
+        "provider",
+        "context"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        17,
+        26
+      ]
+    },
+    {
+      "id": "file:context/ThemeContext.tsx",
+      "type": "file",
+      "name": "ThemeContext.tsx",
+      "filePath": "context/ThemeContext.tsx",
+      "summary": "React context providing dark/light theme toggle with system preference detection.",
+      "tags": [
+        "context",
+        "theme",
+        "dark-mode"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:context/ThemeContext.tsx:ThemeProvider",
+      "type": "function",
+      "name": "ThemeProvider",
+      "filePath": "context/ThemeContext.tsx",
+      "summary": "Theme context provider with system preference detection.",
+      "tags": [
+        "provider",
+        "context"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        15,
+        43
+      ]
+    },
+    {
+      "id": "file:context/ToastContext.tsx",
+      "type": "file",
+      "name": "ToastContext.tsx",
+      "filePath": "context/ToastContext.tsx",
+      "summary": "React context providing toast notification add/remove functions.",
+      "tags": [
+        "context",
+        "notification",
+        "state-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:context/ToastContext.tsx:ToastProvider",
+      "type": "function",
+      "name": "ToastProvider",
+      "filePath": "context/ToastContext.tsx",
+      "summary": "Toast context provider managing notification queue.",
+      "tags": [
+        "provider",
+        "context"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        23,
+        42
+      ]
+    },
+    {
+      "id": "file:hooks/useLenis.ts",
+      "type": "file",
+      "name": "useLenis.ts",
+      "filePath": "hooks/useLenis.ts",
+      "summary": "Custom hook initializing Lenis smooth scrolling with reduced-motion support.",
+      "tags": [
+        "hook",
+        "scrolling",
+        "animation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hooks/useLenis.ts:useLenis",
+      "type": "function",
+      "name": "useLenis",
+      "filePath": "hooks/useLenis.ts",
+      "summary": "Hook for initializing Lenis smooth scroll with RAF loop.",
+      "tags": [
+        "hook",
+        "scrolling"
+      ],
+      "complexity": "moderate",
+      "lineRange": [
+        5,
+        41
+      ]
+    },
+    {
+      "id": "file:hooks/useLocalStorage.test.ts",
+      "type": "file",
+      "name": "useLocalStorage.test.ts",
+      "filePath": "hooks/useLocalStorage.test.ts",
+      "summary": "Test suite for useLocalStorage hook covering initialization, updates, and persistence.",
+      "tags": [
+        "test",
+        "hook",
+        "local-storage"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:hooks/useLocalStorage.ts",
+      "type": "file",
+      "name": "useLocalStorage.ts",
+      "filePath": "hooks/useLocalStorage.ts",
+      "summary": "Custom hook for state synchronized with localStorage.",
+      "tags": [
+        "hook",
+        "state-management",
+        "local-storage"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:hooks/useLocalStorage.ts:useLocalStorage",
+      "type": "function",
+      "name": "useLocalStorage",
+      "filePath": "hooks/useLocalStorage.ts",
+      "summary": "Hook syncing React state with localStorage.",
+      "tags": [
+        "hook",
+        "state-management"
+      ],
+      "complexity": "simple",
+      "lineRange": [
+        5,
+        29
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:app/layout.tsx",
+      "target": "file:app/globals.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/layout.tsx",
+      "target": "file:app/providers.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/layout.tsx",
+      "target": "function:app/layout.tsx:RootLayout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/layout.tsx",
+      "target": "function:app/layout.tsx:RootLayout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:components/AppFooter.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:components/AppHeader.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:components/ContactModal.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:components/CvPicker.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:components/HelpModal.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:components/ReportModal.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:components/SessionProvider.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:components/ToastContainer.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:context/SettingsContext.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:context/ThemeContext.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:context/ToastContext.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:hooks/useKeyboard.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "file:hooks/useLenis.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "function:app/providers.tsx:Providers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "function:app/providers.tsx:Providers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:app/providers.tsx",
+      "target": "function:app/providers.tsx:AppShell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/AppFooter.tsx",
+      "target": "function:components/AppFooter.tsx:AppFooter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/AppFooter.tsx",
+      "target": "function:components/AppFooter.tsx:AppFooter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/AppHeader.tsx",
+      "target": "file:components/SettingsDropdown.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/AppHeader.tsx",
+      "target": "function:components/AppHeader.tsx:AppHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/AppHeader.tsx",
+      "target": "function:components/AppHeader.tsx:AppHeader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/ContactModal.tsx",
+      "target": "file:components/Popup.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/ContactModal.tsx",
+      "target": "function:components/ContactModal.tsx:ContactModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/ContactModal.tsx",
+      "target": "function:components/ContactModal.tsx:ContactModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/CvPicker.tsx",
+      "target": "file:components/Popup.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/CvPicker.tsx",
+      "target": "function:components/CvPicker.tsx:CvPicker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/CvPicker.tsx",
+      "target": "function:components/CvPicker.tsx:CvPicker",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/HelpModal.tsx",
+      "target": "file:components/Popup.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/HelpModal.tsx",
+      "target": "function:components/HelpModal.tsx:HelpModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/HelpModal.tsx",
+      "target": "function:components/HelpModal.tsx:HelpModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/Popup.tsx",
+      "target": "function:components/Popup.tsx:Popup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/Popup.tsx",
+      "target": "function:components/Popup.tsx:Popup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/ReportModal.tsx",
+      "target": "file:components/Popup.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/ReportModal.tsx",
+      "target": "function:components/ReportModal.tsx:ReportModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/ReportModal.tsx",
+      "target": "function:components/ReportModal.tsx:ReportModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/SessionProvider.tsx",
+      "target": "function:components/SessionProvider.tsx:SessionProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/SettingsDropdown.tsx",
+      "target": "file:context/SettingsContext.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/SettingsDropdown.tsx",
+      "target": "function:components/SettingsDropdown.tsx:SettingsDropdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/SettingsDropdown.tsx",
+      "target": "function:components/SettingsDropdown.tsx:SettingsDropdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/ToastContainer.tsx",
+      "target": "file:context/ToastContext.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/ToastContainer.tsx",
+      "target": "function:components/ToastContainer.tsx:ToastContainer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:components/ToastContainer.tsx",
+      "target": "function:components/ToastContainer.tsx:ToastContainer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:context/SettingsContext.tsx",
+      "target": "file:hooks/useLocalStorage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:context/SettingsContext.tsx",
+      "target": "function:context/SettingsContext.tsx:SettingsProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:context/SettingsContext.tsx",
+      "target": "function:context/SettingsContext.tsx:SettingsProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:context/ThemeContext.tsx",
+      "target": "file:hooks/useLocalStorage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:context/ThemeContext.tsx",
+      "target": "function:context/ThemeContext.tsx:ThemeProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:context/ThemeContext.tsx",
+      "target": "function:context/ThemeContext.tsx:ThemeProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:context/ToastContext.tsx",
+      "target": "function:context/ToastContext.tsx:ToastProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:context/ToastContext.tsx",
+      "target": "function:context/ToastContext.tsx:ToastProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:hooks/useLenis.ts",
+      "target": "function:hooks/useLenis.ts:useLenis",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hooks/useLenis.ts",
+      "target": "function:hooks/useLenis.ts:useLenis",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:hooks/useLocalStorage.test.ts",
+      "target": "file:hooks/useLocalStorage.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:hooks/useLocalStorage.ts",
+      "target": "function:hooks/useLocalStorage.ts:useLocalStorage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hooks/useLocalStorage.ts",
+      "target": "function:hooks/useLocalStorage.ts:useLocalStorage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

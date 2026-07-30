@@ -29,18 +29,10 @@ export const authConfig: NextAuthConfig = {
   },
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
-      const isAdmin = nextUrl.pathname.startsWith('/admin')
       const isLoginPage = nextUrl.pathname === '/admin/login'
-      const authMode = process.env.AUTH_MODE || 'cookie'
 
-      // In oauth mode, the client handles auth — middleware doesn't block
-      if (authMode === 'oauth') return true
-
-      // Allow login page always
       if (isLoginPage) return true
-
-      // Protect admin routes
-      if (isAdmin && !auth) return false
+      if (nextUrl.pathname.startsWith('/admin')) return !!auth
 
       return true
     },

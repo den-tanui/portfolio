@@ -1,0 +1,117 @@
+{
+  "batchNumber": 7,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "nodes": [
+    {
+      "id": "AGENTS.md",
+      "type": "file",
+      "language": "markdown",
+      "category": "docs",
+      "labels": ["documentation", "agent-rules", "nextjs-warning"],
+      "properties": {
+        "title": "This is NOT the Next.js you know",
+        "content": "Next.js breaking changes warning for agents",
+        "totalLines": 5,
+        "nonEmptyLines": 4,
+        "sections": ["This is NOT the Next.js you know"]
+      }
+    },
+    {
+      "id": "CLAUDE.md",
+      "type": "file",
+      "language": "markdown",
+      "category": "docs",
+      "labels": ["documentation", "agent-config", "reference"],
+      "properties": {
+        "totalLines": 1,
+        "nonEmptyLines": 1,
+        "references": ["AGENTS.md"]
+      }
+    },
+    {
+      "id": "README.md",
+      "type": "file",
+      "language": "markdown",
+      "category": "docs",
+      "labels": ["documentation", "project-readme", "getting-started"],
+      "properties": {
+        "totalLines": 36,
+        "nonEmptyLines": 23,
+        "sections": ["Getting Started", "Learn More", "Deploy on Vercel"],
+        "framework": "nextjs",
+        "bootstrappedWith": "create-next-app",
+        "devServer": "npm run dev",
+        "port": 3000,
+        "font": "Geist"
+      }
+    },
+    {
+      "id": "package.json",
+      "type": "file",
+      "language": "json",
+      "category": "config",
+      "labels": ["config", "project-metadata", "dependencies", "scripts"],
+      "properties": {
+        "name": "portfolio",
+        "version": "0.1.0",
+        "private": true,
+        "scripts": ["dev", "build", "start", "lint", "typecheck", "test", "test:watch", "format", "format:check", "ci"],
+        "dependencies": ["gray-matter", "lenis", "next", "next-auth", "next-mdx-remote", "react", "react-dom"],
+        "devDependencies": ["@tailwindcss/postcss", "@testing-library/jest-dom", "@testing-library/react", "@types/node", "@types/react", "@types/react-dom", "@vitejs/plugin-react", "eslint", "eslint-config-next", "jsdom", "prettier", "tailwindcss", "typescript", "vitest"],
+        "framework": "nextjs",
+        "runtime": "react-19",
+        "nextVersion": "16.2.10",
+        "testing": "vitest"
+      }
+    },
+    {
+      "id": "tsconfig.json",
+      "type": "file",
+      "language": "json",
+      "category": "config",
+      "labels": ["config", "typescript", "compiler-options"],
+      "properties": {
+        "totalLines": 34,
+        "nonEmptyLines": 34,
+        "target": "ES2017",
+        "strict": true,
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "jsx": "react-jsx",
+        "incremental": true,
+        "noEmit": true,
+        "pathAliases": ["@/*"],
+        "plugins": ["next"],
+        "includePatterns": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts", "**/*.mts"],
+        "excludePatterns": ["node_modules"]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "CLAUDE.md",
+      "target": "AGENTS.md",
+      "relationship": "references",
+      "properties": {
+        "referenceType": "import"
+      }
+    },
+    {
+      "source": "README.md",
+      "target": "package.json",
+      "relationship": "documents-project",
+      "properties": {
+        "description": "README documents the project defined by package.json"
+      }
+    },
+    {
+      "source": "package.json",
+      "target": "tsconfig.json",
+      "relationship": "configures-typescript",
+      "properties": {
+        "description": "package.json defines typecheck script that uses tsconfig.json"
+      }
+    }
+  ]
+}

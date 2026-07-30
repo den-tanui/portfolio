@@ -1,0 +1,113 @@
+[
+  {
+    "id": "layer:ui-components",
+    "name": "UI Components",
+    "description": "Reusable React components for the portfolio site including layout, navigation, modals, and interactive elements",
+    "nodeIds": [
+      "file:components/AppFooter.tsx",
+      "file:components/AppHeader.tsx",
+      "file:components/ContactModal.tsx",
+      "file:components/CvPicker.tsx",
+      "file:components/HelpModal.tsx",
+      "file:components/Popup.tsx",
+      "file:components/ReportModal.tsx",
+      "file:components/SessionProvider.tsx",
+      "file:components/SettingsDropdown.tsx",
+      "file:components/ToastContainer.tsx",
+      "file:components/SearchBar.tsx",
+      "file:components/MDXContent.tsx",
+      "file:components/MDXComponents.tsx",
+      "file:components/TableOfContents.tsx",
+      "file:components/SearchResults.tsx",
+      "file:components/Skills.tsx",
+      "file:components/SocialLinks.tsx",
+      "file:components/Terminal.tsx",
+      "file:components/Testimonials.tsx",
+      "file:components/ThemeToggle.tsx",
+      "file:components/Timeline.tsx",
+      "file:components/TypingAnimation.tsx"
+    ]
+  },
+  {
+    "id": "layer:pages-routes",
+    "name": "Pages & Routes",
+    "description": "Next.js App Router pages and dynamic routes for blog posts, projects, and search",
+    "nodeIds": [
+      "file:app/layout.tsx",
+      "file:app/providers.tsx",
+      "file:app/blog/BlogGrid.tsx",
+      "file:app/blog/page.tsx",
+      "file:app/projects/ProjectGrid.tsx",
+      "file:app/projects/page.tsx",
+      "file:app/search/SearchResults.tsx",
+      "file:app/search/page.tsx",
+      "file:app/blog/[slug]/page.tsx",
+      "file:app/projects/[slug]/page.tsx"
+    ]
+  },
+  {
+    "id": "layer:hooks-context",
+    "name": "Hooks & Context",
+    "description": "Custom React hooks and context providers for theme, settings, and state management",
+    "nodeIds": [
+      "file:hooks/useLenis.ts",
+      "file:hooks/useLocalStorage.test.ts",
+      "file:hooks/useLocalStorage.ts",
+      "file:hooks/useKeyboard.test.ts",
+      "file:hooks/useKeyboard.ts",
+      "file:context/SettingsContext.tsx",
+      "file:context/ThemeContext.tsx",
+      "file:context/ToastContext.tsx"
+    ]
+  },
+  {
+    "id": "layer:services-utils",
+    "name": "Services & Utilities",
+    "description": "Core business logic, API integrations, content management, and utility functions",
+    "nodeIds": [
+      "file:lib/content.ts",
+      "file:lib/utils.test.ts",
+      "file:lib/utils.ts",
+      "file:lib/remark-extract-headings.mjs",
+      "file:lib/schema.ts",
+      "file:type:lib/schema.ts:BlogPostFrontmatter",
+      "file:type:lib/schema.ts:ProjectFrontmatter",
+      "file:lib/fonts.ts",
+      "file:lib/theme.ts",
+      "file:lib/api.ts",
+      "file:lib/search-index.ts",
+      "file:lib/constants.ts",
+      "file:lib/github.ts",
+      "file:lib/og.tsx",
+      "file:lib/projects.ts",
+      "file:lib/test-utils.ts"
+    ]
+  },
+  {
+    "id": "layer:content",
+    "name": "MDX Content",
+    "description": "MDX blog posts, project documentation, and about page content",
+    "nodeIds": [
+      "document:content/projects/dotfiles-manager.mdx",
+      "document:content/projects/fzf-scripts.mdx",
+      "document:content/projects/neovim-config.mdx"
+    ]
+  },
+  {
+    "id": "layer:project-config",
+    "name": "Project Configuration",
+    "description": "Root configuration files, package manifests, CI/CD pipelines, and project documentation",
+    "nodeIds": [
+      "file:section:::.github/workflows/ci.yml::name",
+      "file:section:::.github/workflows/ci.yml::on",
+      "file:section:::.github/workflows/ci.yml::jobs",
+      "file:job:::.github/workflows/ci.yml::quality",
+      "file:AGENTS.md",
+      "file:CLAUDE.md",
+      "file:README.md",
+      "file:package.json",
+      "file:tsconfig.json",
+      "file:::.github/workflows/ci.yml"
+    ]
+  }
+]

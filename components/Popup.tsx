@@ -28,14 +28,18 @@ const ACCENT_BORDER: Record<string, string> = {
  * and provides consistent animation classes.
  */
 export default function Popup({ isOpen, onClose, children, size = 'max-w-md', accent = 'none' }: PopupProps) {
-  // Register Escape key handler only when open
+  // Register Escape key handler and lock body scroll when open
   useEffect(() => {
     if (!isOpen) return
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', handler)
-    return () => window.removeEventListener('keydown', handler)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', handler)
+      document.body.style.overflow = ''
+    }
   }, [isOpen, onClose])
 
   if (!isOpen) return null
@@ -54,7 +58,7 @@ export default function Popup({ isOpen, onClose, children, size = 'max-w-md', ac
       aria-modal="true"
     >
       <div
-        className={`bg-surface-container border border-outline rounded-lg shadow-xl ${size} mx-4 p-5 text-xs popup-scale-in ${borderAccent}`}
+        className={`bg-surface-container border border-outline rounded-lg shadow-xl ${size} mx-4 p-5 text-xs popup-scale-in max-h-[85vh] overflow-y-auto ${borderAccent}`}
       >
         {children}
       </div>
