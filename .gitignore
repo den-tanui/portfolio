@@ -49,3 +49,7 @@ node_modules
 /SPECS.md
 /.agents/
 /.lavish/
+
+# Agent workspace caches
+/.tmp/
+/.understand-anything/
