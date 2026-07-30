@@ -1,42 +1,37 @@
 import type { NextAuthConfig } from 'next-auth'
 import GitHub from 'next-auth/providers/github'
-import Google from 'next-auth/providers/google'
-import Credentials from 'next-auth/providers/credentials'
 
 export const authConfig: NextAuthConfig = {
-  providers: [
-    Credentials({
-      name: 'password',
-      credentials: {
-        password: { label: 'Password', type: 'password' },
-      },
-      async authorize(credentials) {
-        if (credentials?.password === process.env.ADMIN_PASSWORD) {
-          return { id: 'admin', name: 'Admin' }
-        }
-        return null
-      },
-    }),
-    ...(process.env.AUTH_GITHUB_ID && process.env.AUTH_GITHUB_SECRET
-      ? [GitHub({ allowDangerousEmailAccountLinking: true })]
-      : []),
-    ...(process.env.AUTH_GOOGLE_ID && process.env.AUTH_GOOGLE_SECRET
-      ? [Google({ allowDangerousEmailAccountLinking: true })]
-      : []),
-  ],
+  providers: [GitHub],
+
   pages: {
     signIn: '/admin/login',
   },
+
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoginPage = nextUrl.pathname === '/admin/login'
+      const isAuthPage = nextUrl.pathname.startsWith('/api/auth')
 
-      if (isLoginPage) return true
+      if (isLoginPage || isAuthPage) return true
       if (nextUrl.pathname.startsWith('/admin')) return !!auth
 
       return true
     },
+
+    async jwt({ token, account }) {
+      if (account?.access_token) {
+        token.accessToken = account.access_token
+      }
+      return token
+    },
+
+    async session({ session, token }) {
+      session.accessToken = token.accessToken as string
+      return session
+    },
   },
+
   trustHost: true,
   secret: process.env.AUTH_SECRET,
 }
