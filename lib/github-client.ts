@@ -1,8 +1,10 @@
 /**
- * GitHub API client — writes content to the portfolio-content repo.
- * Uses GITHUB_TOKEN from env var (server-side only).
+ * GitHub Contents API client — writes to the same portfolio repo.
+ * Token is provided by the caller (extracted from session).
  */
 const API = 'https://api.github.com'
+const OWNER = 'den-tanui'
+const REPO = 'portfolio-website'
 
 export interface GitHubFile {
   path: string
@@ -11,23 +13,11 @@ export interface GitHubFile {
   message: string
 }
 
-function getRepo(): string {
-  return (
-    process.env.NEXT_PUBLIC_CONTENT_REPO ||
-    process.env.CONTENT_REPO ||
-    'den-tanui/portfolio-content'
-  )
-}
-
-function getToken(): string | null {
-  return process.env.GITHUB_TOKEN || null
-}
-
 export async function getFileMeta(
   path: string,
   token: string,
 ): Promise<{ sha: string } | null> {
-  const res = await fetch(`${API}/repos/${getRepo()}/contents/${path}`, {
+  const res = await fetch(`${API}/repos/${OWNER}/${REPO}/contents/${path}`, {
     headers: {
       Authorization: `Bearer ${token}`,
       Accept: 'application/vnd.github+json',
@@ -47,19 +37,22 @@ export async function upsertFile(
   const body: Record<string, unknown> = {
     message: file.message,
     content: btoa(file.content),
-    branch: 'main',
+    branch: 'master',
   }
   if (existing) body.sha = existing.sha
 
-  const res = await fetch(`${API}/repos/${getRepo()}/contents/${file.path}`, {
-    method: 'PUT',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: 'application/vnd.github+json',
-      'Content-Type': 'application/json',
+  const res = await fetch(
+    `${API}/repos/${OWNER}/${REPO}/contents/${file.path}`,
+    {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
     },
-    body: JSON.stringify(body),
-  })
+  )
   if (!res.ok) {
     const err = await res.json().catch(() => ({}))
     throw new Error(err.message || `GitHub API error: ${res.status}`)
@@ -74,15 +67,18 @@ export async function deleteFileFromRepo(
 ): Promise<boolean> {
   const meta = await getFileMeta(path, token)
   if (!meta) return true
-  const res = await fetch(`${API}/repos/${getRepo()}/contents/${path}`, {
-    method: 'DELETE',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: 'application/vnd.github+json',
-      'Content-Type': 'application/json',
+  const res = await fetch(
+    `${API}/repos/${OWNER}/${REPO}/contents/${path}`,
+    {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message, sha: meta.sha, branch: 'master' }),
     },
-    body: JSON.stringify({ message, sha: meta.sha, branch: 'main' }),
-  })
+  )
   if (!res.ok) {
     const err = await res.json().catch(() => ({}))
     throw new Error(err.message || `GitHub API error: ${res.status}`)
