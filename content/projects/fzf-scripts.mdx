@@ -1,0 +1,31 @@
+---
+title: "fzf-scripts"
+slug: fzf-scripts
+tags: [fzf, cli, automation]
+languages: [shell, python]
+description: "Collection of interactive fuzzy finder scripts for daily terminal workflows — file search, git commits, process killer, and Docker management."
+image: "/images/projects/fzf-scripts.jpg"
+stars: 128
+featured: true
+---
+
+## Overview
+
+A collection of shell scripts that wrap common terminal tasks with fzf-powered interactive selection.
+
+## Features
+
+- **File finder**: Fuzzy search files with live preview
+- **Git log browser**: Interactive commit selection with diff preview
+- **Process killer**: Search and kill processes by name
+- **Docker manager**: Browse containers and images with preview
+
+## Usage
+
+```bash
+# Interactive file search
+ff "*.ts" | xargs nvim
+
+# Git log browser
+git log --oneline | fzf --preview 'git show {1}'
+```

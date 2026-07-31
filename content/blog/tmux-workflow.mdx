@@ -1,0 +1,49 @@
+---
+title: "Building a tmux workflow for remote development"
+slug: building-tmux-workflow
+date: 2023-09-20
+tags: [tmux, devops, terminal]
+description: "Creating a persistent tmux session layout for remote SSH development with automatic session restore."
+image: "/images/blog/tmux-workflow.jpg"
+featured: true
+---
+
+## Why tmux
+
+Remote development means losing context every time you disconnect. tmux gives you persistent sessions that survive network drops and laptop sleeps.
+
+## The layout
+
+My standard session starts with three windows:
+
+1. **Editor** — nvim in the left pane, file tree in the right
+2. **Server** — dev server with logs streaming
+3. **Git** — git status + a scratch shell
+
+```bash
+# ~/.tmux-session.sh
+tmux new-session -d -s dev
+tmux send-keys -t dev:1 'nvim .' C-m
+tmux new-window -t dev:2 -n server
+tmux send-keys -t dev:2 'npm run dev' C-m
+tmux new-window -t dev:3 -n git
+```
+
+## Session restore with tmux-resurrect
+
+The tmux-resurrect plugin saves pane contents and layout to disk. After a reboot:
+
+```
+Prefix + Ctrl-s  — save
+Prefix + Ctrl-r  — restore
+```
+
+## Battery-aware status
+
+Add CPU and battery to the status bar so you know when to unplug:
+
+```bash
+set -g status-right '#{battery_percentage} | %H:%M'
+```
+
+tmux turns a remote terminal into a persistent development environment.
