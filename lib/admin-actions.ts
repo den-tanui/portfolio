@@ -1,5 +1,6 @@
 'use server'
 
+import { auth } from './auth'
 import { upsertFile, deleteFileFromRepo, triggerDeploy } from './github-client'
 import { revalidatePath } from 'next/cache'
 
@@ -58,17 +59,27 @@ function buildFrontmatter(data: Record<string, unknown>): string {
   return lines.join('\n')
 }
 
+/* ───────── Auth Guard ───────── */
+
+async function requireAuth(): Promise<string> {
+  const session = await auth()
+  if (!session?.accessToken) {
+    throw new Error('Unauthorized — you must be signed in to perform this action')
+  }
+  return session.accessToken
+}
+
 /* ───────── Blog Posts ───────── */
 
 export async function createPost(data: PostForm) {
+  const token = await requireAuth()
   const slug = safeSlug(data.slug || data.title)
   const tags = data.tags.split(',').map((t) => t.trim()).filter(Boolean)
-  const token = process.env.GITHUB_TOKEN
-  if (!token) throw new Error('GITHUB_TOKEN not configured')
 
   const frontmatter = buildFrontmatter({
     title: data.title,
     slug,
+    date: new Date().toISOString().split('T')[0],
     tags,
     description: data.description,
     image: data.image || '/images/blog/placeholder.jpg',
@@ -94,14 +105,14 @@ export async function createPost(data: PostForm) {
 }
 
 export async function updatePost(oldSlug: string, data: PostForm) {
+  const token = await requireAuth()
   const slug = safeSlug(data.slug || data.title)
   const tags = data.tags.split(',').map((t) => t.trim()).filter(Boolean)
-  const token = process.env.GITHUB_TOKEN
-  if (!token) throw new Error('GITHUB_TOKEN not configured')
 
   const frontmatter = buildFrontmatter({
     title: data.title,
     slug,
+    date: new Date().toISOString().split('T')[0],
     tags,
     description: data.description,
     image: data.image || '/images/blog/placeholder.jpg',
@@ -111,7 +122,6 @@ export async function updatePost(oldSlug: string, data: PostForm) {
 
   const mdx = `${frontmatter}\n\n${data.content || ''}`
 
-  // Remove old file if slug changed
   if (oldSlug !== slug) {
     await deleteFileFromRepo(
       `content/blog/${oldSlug}.md`,
@@ -137,15 +147,12 @@ export async function updatePost(oldSlug: string, data: PostForm) {
 }
 
 export async function deletePost(slug: string) {
-  const token = process.env.GITHUB_TOKEN
-  if (!token) throw new Error('GITHUB_TOKEN not configured')
-
+  const token = await requireAuth()
   await deleteFileFromRepo(
     `content/blog/${slug}.md`,
     `Delete post: ${slug}`,
     token,
   )
-
   await triggerDeploy()
   revalidatePath('/blog')
   revalidatePath('/admin')
@@ -155,11 +162,10 @@ export async function deletePost(slug: string) {
 /* ───────── Projects ───────── */
 
 export async function createProject(data: ProjectForm) {
+  const token = await requireAuth()
   const slug = safeSlug(data.slug || data.title)
   const tags = data.tags.split(',').map((t) => t.trim()).filter(Boolean)
   const languages = data.languages.split(',').map((l) => l.trim()).filter(Boolean)
-  const token = process.env.GITHUB_TOKEN
-  if (!token) throw new Error('GITHUB_TOKEN not configured')
 
   const frontmatter = buildFrontmatter({
     title: data.title,
@@ -191,11 +197,10 @@ export async function createProject(data: ProjectForm) {
 }
 
 export async function updateProject(oldSlug: string, data: ProjectForm) {
+  const token = await requireAuth()
   const slug = safeSlug(data.slug || data.title)
   const tags = data.tags.split(',').map((t) => t.trim()).filter(Boolean)
   const languages = data.languages.split(',').map((l) => l.trim()).filter(Boolean)
-  const token = process.env.GITHUB_TOKEN
-  if (!token) throw new Error('GITHUB_TOKEN not configured')
 
   const frontmatter = buildFrontmatter({
     title: data.title,
@@ -236,15 +241,12 @@ export async function updateProject(oldSlug: string, data: ProjectForm) {
 }
 
 export async function deleteProject(slug: string) {
-  const token = process.env.GITHUB_TOKEN
-  if (!token) throw new Error('GITHUB_TOKEN not configured')
-
+  const token = await requireAuth()
   await deleteFileFromRepo(
     `content/projects/${slug}.md`,
     `Delete project: ${slug}`,
     token,
   )
-
   await triggerDeploy()
   revalidatePath('/projects')
   revalidatePath('/admin')
