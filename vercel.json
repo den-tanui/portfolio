@@ -1,4 +1,3 @@
 {
-  "buildCommand": "bash scripts/prebuild.sh && next build",
   "framework": "nextjs"
 }

@@ -42,9 +42,6 @@ next-env.d.ts
 skeleton
 node_modules
 
-# Content repo (cloned at build time from portfolio-content)
-/content/
-
 # Unwanted root-level files (flattened from portfolio/)
 /SPECS.md
 /.agents/
